@@ -1,0 +1,849 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A63952C0-DC3E-40FF-9995-A087656FBA11}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>CS_BTE_Launcher.My.MyApplication</StartupObject>
+    <RootNamespace>CS_BTE_Launcher</RootNamespace>
+    <AssemblyName>cswd</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>cswd.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>cswd.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>goldcstrike.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CSBTE">
+      <HintPath>..\..\GM X\CSBTE\bin\Release\CSBTE.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Design, Version=11.2.0.1, Culture=neutral, PublicKeyToken=2c9ff1fddc42653c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DotNetBar for Windows Forms\DevComponents.DotNetBar.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Keyboard, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevComponents.DotNetBar.Keyboard.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Schedule, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevComponents.DotNetBar.Schedule.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.SuperGrid, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevComponents.DotNetBar.SuperGrid.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2, Version=11.2.0.1, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DotNetBar for Windows Forms\DevComponents.DotNetBar2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=11.2.0.1, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DotNetBar for Windows Forms\DevComponents.Instrumentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation.Design, Version=11.2.0.1, Culture=neutral, PublicKeyToken=30cefae8f341f577, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DotNetBar for Windows Forms\DevComponents.Instrumentation.Design.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevComponents.SuperGrid.Design, Version=11.2.0.1, Culture=neutral, PublicKeyToken=1fea3f5d8d482bff, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Release\DevComponents.SuperGrid.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=11.2.0.1, Culture=neutral, PublicKeyToken=cfcbd7476b2389d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\DotNetBar for Windows Forms\DevComponents.TreeGX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Modules\BitDefender Theme.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\BTEFormatReader.vb" />
+    <Compile Include="Modules\CFGRead.vb" />
+    <Compile Include="Modules\Dwm.vb" />
+    <Compile Include="Modules\Steam Theme.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\ThemeBase151.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Modules\WinApi.vb" />
+    <Compile Include="New Forms\frmBuy.Designer.vb">
+      <DependentUpon>frmBuy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmBuy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmCreate.Designer.vb">
+      <DependentUpon>frmCreate.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmCreate.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmGamevb.Designer.vb">
+      <DependentUpon>frmGamevb.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmGamevb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmLoading.Designer.vb">
+      <DependentUpon>frmLoading.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmLoading.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmMenu.Designer.vb">
+      <DependentUpon>frmMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmParent.Designer.vb">
+      <DependentUpon>frmParent.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmParent.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmStore.Designer.vb">
+      <DependentUpon>frmStore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmStore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\sqlConn.vb" />
+    <Compile Include="Recycle Bin\frmBackground2.Designer.vb">
+      <DependentUpon>frmBackground2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recycle Bin\frmBackground2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recycle Bin\frmCangku.Designer.vb">
+      <DependentUpon>frmCangku.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recycle Bin\frmCangku.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recycle Bin\frmHLDS.Designer.vb">
+      <DependentUpon>frmHLDS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recycle Bin\frmHLDS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmJoin.Designer.vb">
+      <DependentUpon>frmJoin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmJoin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmLauncher.Designer.vb">
+      <DependentUpon>frmLauncher.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmLauncher.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmMode.Designer.vb">
+      <DependentUpon>frmMode.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmMode.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmMsgbox.Designer.vb">
+      <DependentUpon>frmMsgbox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmMsgbox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmNews.Designer.vb">
+      <DependentUpon>frmNews.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmNews.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmOption.Designer.vb">
+      <DependentUpon>frmOption.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmOption.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recycle Bin\frmPlayer.Designer.vb">
+      <DependentUpon>frmPlayer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recycle Bin\frmPlayer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recycle Bin\frmQuickBuy.Designer.vb">
+      <DependentUpon>frmQuickBuy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recycle Bin\frmQuickBuy.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recycle Bin\frmWeapon.Designer.vb">
+      <DependentUpon>frmWeapon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Recycle Bin\frmWeapon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\INIreadvb.vb" />
+    <Compile Include="Modules\INIwritevb.vb" />
+    <Compile Include="Modules\INIwritevb2.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="New Forms\frmBarracks.Designer.vb">
+      <DependentUpon>frmBarracks.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmBarracks.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="New Forms\frmPause.Designer.vb">
+      <DependentUpon>frmPause.vb</DependentUpon>
+    </Compile>
+    <Compile Include="New Forms\frmPause.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modules\transPanel.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="User Controls\ucBuyClass.Designer.vb">
+      <DependentUpon>ucBuyClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ucBuyClass.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ucBuyWeapon.Designer.vb">
+      <DependentUpon>ucBuyWeapon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ucBuyWeapon.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ucClass.Designer.vb">
+      <DependentUpon>ucClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ucClass.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ucMyClass.Designer.vb">
+      <DependentUpon>ucMyClass.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ucMyClass.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ucMyWeapon.Designer.vb">
+      <DependentUpon>ucMyWeapon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ucMyWeapon.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ucWeapon.Designer.vb">
+      <DependentUpon>ucWeapon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ucWeapon.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="User Controls\ucWeaponPanel.Designer.vb">
+      <DependentUpon>ucWeaponPanel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="User Controls\ucWeaponPanel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="New Forms\frmBuy.resx">
+      <DependentUpon>frmBuy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmCreate.resx">
+      <DependentUpon>frmCreate.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmGamevb.resx">
+      <DependentUpon>frmGamevb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmLoading.resx">
+      <DependentUpon>frmLoading.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmMenu.resx">
+      <DependentUpon>frmMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmParent.resx">
+      <DependentUpon>frmParent.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmStore.resx">
+      <DependentUpon>frmStore.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recycle Bin\frmBackground2.resx">
+      <DependentUpon>frmBackground2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recycle Bin\frmCangku.resx">
+      <DependentUpon>frmCangku.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recycle Bin\frmHLDS.resx">
+      <DependentUpon>frmHLDS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmJoin.resx">
+      <DependentUpon>frmJoin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmLauncher.resx">
+      <DependentUpon>frmLauncher.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmMode.resx">
+      <DependentUpon>frmMode.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmMsgbox.resx">
+      <DependentUpon>frmMsgbox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmNews.resx">
+      <DependentUpon>frmNews.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmOption.resx">
+      <DependentUpon>frmOption.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recycle Bin\frmPlayer.resx">
+      <DependentUpon>frmPlayer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recycle Bin\frmQuickBuy.resx">
+      <DependentUpon>frmQuickBuy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recycle Bin\frmWeapon.resx">
+      <DependentUpon>frmWeapon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmBarracks.resx">
+      <DependentUpon>frmBarracks.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="New Forms\frmPause.resx">
+      <DependentUpon>frmPause.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ucBuyClass.resx">
+      <DependentUpon>ucBuyClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ucBuyWeapon.resx">
+      <DependentUpon>ucBuyWeapon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ucClass.resx">
+      <DependentUpon>ucClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ucMyClass.resx">
+      <DependentUpon>ucMyClass.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ucMyWeapon.resx">
+      <DependentUpon>ucMyWeapon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ucWeapon.resx">
+      <DependentUpon>ucWeapon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User Controls\ucWeaponPanel.resx">
+      <DependentUpon>ucWeaponPanel.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg_pic.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2_anniversary_of_the_painting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\All_about_lovin_%27you_paint.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Army_rank_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bandspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basic_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\basic_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Battalion_rank_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Brigade_rank_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Choijiyoon_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Corps_rank_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crissspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ctspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dm_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dm_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dr_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dr_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EricaSpray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fun_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fun_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gdm_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gdm_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gongmospray01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gongmospray02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gongmospray03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gongmospray07.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gongmospray08.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gongmospray09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gongmospray10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hd_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hd_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Host_regular_zombie_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Jenniferspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ladderspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Love_the_debris_painting_%28left%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Love_the_debris_painting_%28right%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MeiSpray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Natashaspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Newyearspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nndm_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nndm_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\No_photo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\none_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\none_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\npc_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\npc_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pczombi_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Platoon_rank_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ritsuka_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skull_rabbit_painting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Skullspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sl8gold_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sniper_king_painting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\td_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\td_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trspray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valentines_section_painting.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Watergun_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wc13spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wcg12spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xmas_spray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Xmasspray09.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Yurispray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zb1_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zb1_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zb3_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zb3_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zb4_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zb4_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ze_n.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ze_s.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\textbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cannotuse.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="goldcstrike.ico" />
+    <None Include="Resources\cswd.jpg" />
+    <None Include="Resources\tr.png" />
+    <None Include="Resources\ct.png" />
+    <None Include="Resources\noticetitle.png" />
+    <None Include="Resources\randombox%40o.png" />
+    <None Include="Resources\randombox%40n.png" />
+    <None Include="Resources\randombox%40d.png" />
+    <None Include="Resources\randombox%40c.png" />
+    <None Include="Resources\luckyitem%40o.png" />
+    <None Include="Resources\luckyitem%40n.png" />
+    <None Include="Resources\luckyitem%40c.png" />
+    <None Include="Resources\myinfo%40o.png" />
+    <None Include="Resources\myinfo%40n.png" />
+    <None Include="Resources\myinfo%40c.png" />
+    <None Include="Resources\btn_bulletin%40c.png" />
+    <None Include="Resources\btn_bulletin%40n.png" />
+    <None Include="Resources\btn_bulletin%40o.png" />
+    <None Include="Resources\btn_cancel%40c.png" />
+    <None Include="Resources\btn_cancel%40n.png" />
+    <None Include="Resources\btn_cancel%40o.png" />
+    <None Include="Resources\btn_channel%40c.png" />
+    <None Include="Resources\btn_channel%40n.png" />
+    <None Include="Resources\btn_channel%40o.png" />
+    <None Include="Resources\btn_exit%40c.png" />
+    <None Include="Resources\btn_exit%40n.png" />
+    <None Include="Resources\btn_exit%40o.png" />
+    <None Include="Resources\btn_myinfo%40c.png" />
+    <None Include="Resources\btn_myinfo%40n.png" />
+    <None Include="Resources\btn_myinfo%40o.png" />
+    <None Include="Resources\btn_option%40c.png" />
+    <None Include="Resources\btn_option%40n.png" />
+    <None Include="Resources\btn_option%40o.png" />
+    <None Include="Resources\btn_quest%40c.png" />
+    <None Include="Resources\btn_quest%40n.png" />
+    <None Include="Resources\btn_quest%40o.png" />
+    <None Include="Resources\btn_quest_new%40n.png" />
+    <None Include="Resources\btn_quest_new%40o.png" />
+    <None Include="Resources\btn_server%40c.png" />
+    <None Include="Resources\btn_server%40n.png" />
+    <None Include="Resources\btn_server%40o.png" />
+    <None Include="Resources\btn_store%40c.png" />
+    <None Include="Resources\btn_store%40n.png" />
+    <None Include="Resources\btn_store%40o.png" />
+    <None Include="Resources\btn_weaponmaking%40c.png" />
+    <None Include="Resources\btn_weaponmaking%40n.png" />
+    <None Include="Resources\btn_weaponmaking%40o.png" />
+    <Content Include="Resources\coinbox2.png" />
+    <None Include="Resources\csbte_bg_2.jpg" />
+    <None Include="Resources\taskbar.png" />
+    <None Include="Resources\csbte_bg.jpg" />
+    <None Include="Resources\coinbox21.png" />
+    <None Include="bin\Debug\launcher\mapimg\random_cso.png" />
+    <Content Include="cstrike.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DevComponents.DotNetBar.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevComponents.DotNetBar2">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevComponents.Instrumentation">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevComponents.Instrumentation.Design">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevComponents.TreeGX">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

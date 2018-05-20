@@ -1,0 +1,114 @@
+Private Sub lv_Primary_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        On Error Resume Next
+        refreshCtrls()
+        lbl_ID.Text = lv_Primary.SelectedItems(0).SubItems(1).Text
+        lbl_Name.Text = lv_Primary.SelectedItems.Item(0).Text
+        lbl_Model.Text = lv_Primary.SelectedItems(0).SubItems(2).Text
+        PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\wpnimg\" & lbl_Model.Text & ".png")
+        pb_Damage.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Damage")
+        pb_HitRate.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "HitRate")
+        pb_Reaction.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Reaction")
+        pb_FiringSpeed.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "FiringSpeed")
+        pb_Weight.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Weight")
+        lbl_Cost.Text = "$" & ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Cost")
+        lbl_Ammo.Text = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "BpAmmo")
+    End Sub
+
+    Private Sub lv_Secondary_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
+        If selModel.Contains(lbl_Model.Text & ",") Then
+            Exit Sub
+        Else
+            txt_SelName.Text = txt_SelName.Text + lbl_Name.Text & ", "
+            selModel = selModel + lbl_Model.Text & ","
+            lbl_SelWpn.Text = lbl_SelWpn.Text + 1
+            Dim line = lv_Secondary.SelectedIndices(0)
+            lv_SelSecondary.Items.Add(lv_Secondary.Items(line).Clone())
+            If lbl_SelWpn.Text > 9 Then
+                lbl_SelWpn.ForeColor = Color.Red
+            Else
+                lbl_SelWpn.ForeColor = Color.White
+            End If
+        End If
+    End Sub
+
+    Private Sub lv_Secondary_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        On Error Resume Next
+        refreshCtrls()
+        lbl_ID.Text = lv_Secondary.SelectedItems(0).SubItems(1).Text
+        lbl_Name.Text = lv_Secondary.SelectedItems.Item(0).Text
+        lbl_Model.Text = lv_Secondary.SelectedItems(0).SubItems(2).Text
+        PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\wpnimg\" & lbl_Model.Text & ".png")
+        pb_Damage.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Damage")
+        pb_HitRate.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "HitRate")
+        pb_Reaction.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Reaction")
+        pb_FiringSpeed.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "FiringSpeed")
+        pb_Weight.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Weight")
+        lbl_Cost.Text = "$" & ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Cost")
+        lbl_Ammo.Text = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "BpAmmo")
+    End Sub
+
+    Private Sub lv_Melee_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
+        If selModel.Contains(lbl_Model.Text & ",") Then
+            Exit Sub
+        Else
+            txt_SelName.Text = txt_SelName.Text + lbl_Name.Text & ", "
+            selModel = selModel + lbl_Model.Text & ","
+            lbl_SelWpn.Text = lbl_SelWpn.Text + 1
+            Dim line = lv_Melee.SelectedIndices(0)
+            lv_SelMelee.Items.Add(lv_Melee.Items(line).Clone())
+            If lbl_SelWpn.Text > 4 Then
+                lbl_SelWpn.ForeColor = Color.Red
+            Else
+                lbl_SelWpn.ForeColor = Color.White
+            End If
+        End If
+    End Sub
+
+    Private Sub lv_Melee_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        On Error Resume Next
+        refreshCtrls()
+        lbl_ID.Text = lv_Melee.SelectedItems(0).SubItems(1).Text
+        lbl_Name.Text = lv_Melee.SelectedItems.Item(0).Text
+        lbl_Model.Text = lv_Melee.SelectedItems(0).SubItems(2).Text
+        PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\wpnimg\" & lbl_Model.Text & ".png")
+        pb_Damage.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Damage")
+        pb_HitRate.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "HitRate")
+        pb_Reaction.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Reaction")
+        pb_FiringSpeed.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "FiringSpeed")
+        pb_Weight.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Weight")
+        lbl_Cost.Text = "$" & ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Cost")
+        lbl_Ammo.Text = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "BpAmmo")
+    End Sub
+
+    Private Sub lv_Grenade_DoubleClick(ByVal sender As Object, ByVal e As System.EventArgs)
+        If selModel.Contains(lbl_Model.Text & ",") Then
+            Exit Sub
+        Else
+            txt_SelName.Text = txt_SelName.Text + lbl_Name.Text & ", "
+            selModel = selModel + lbl_Model.Text & ","
+            lbl_SelWpn.Text = lbl_SelWpn.Text + 1
+            Dim line = lv_Grenades.SelectedIndices(0)
+            lv_SelGrenades.Items.Add(lv_Grenades.Items(line).Clone())
+            If lbl_SelWpn.Text > 4 Then
+                lbl_SelWpn.ForeColor = Color.Red
+            Else
+                lbl_SelWpn.ForeColor = Color.White
+            End If
+        End If
+    End Sub
+
+    Private Sub lv_Grenade_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
+        On Error Resume Next
+        refreshCtrls()
+        lbl_ID.Text = lv_Grenades.SelectedItems(0).SubItems(1).Text
+        lbl_Name.Text = lv_Grenades.SelectedItems.Item(0).Text
+        lbl_Model.Text = lv_Grenades.SelectedItems(0).SubItems(2).Text
+        PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\wpnimg\" & lbl_Model.Text & ".png")
+        pb_Damage.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Damage")
+        pb_HitRate.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "HitRate")
+        pb_Reaction.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Reaction")
+        pb_FiringSpeed.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "FiringSpeed")
+        pb_Weight.Value = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Weight")
+        lbl_Cost.Text = "$" & ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "Cost")
+        lbl_Ammo.Text = ReadIniValue(My.Application.Info.DirectoryPath & "\metahook\weapons.ini", lbl_Model.Text.ToUpper, "BpAmmo")
+    End Sub

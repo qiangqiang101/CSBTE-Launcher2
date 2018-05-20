@@ -1,0 +1,68 @@
+Public Sub readBteWpn()
+        Dim bteFormat As New BTEFormatReader(bteWpn, wpnPara)
+        Dim qty As Integer = bteFormat.Count - 1
+        Dim ucWpn(qty) As ucWeapon
+
+        For i As Integer = ucWpn.GetLowerBound(0) To ucWpn.GetUpperBound(0)
+            'ucWpn(i) = New ucWeapon
+            Dim wpnModel As String = bteFormat(i)("model")
+            Dim wpnName As String = ReadIniValue(launcher, "NAME", wpnModel)
+            Dim wpnMenu As String = bteFormat(i)("menu")
+            Dim wpnPsub As String = bteFormat(i)("p_sub")
+
+            If wpnModel.Contains("svdex") OrElse wpnModel.Contains("joker_knife") OrElse wpnModel.Contains("qbarrel") OrElse wpnModel.Contains("ak47_long") OrElse wpnModel.Contains("dmp7a1") OrElse wpnModel.Contains("ddeagle") OrElse wpnModel.Contains("poisongun") OrElse wpnModel.Contains("nataknifed") Then
+                GoTo step_2
+            End If
+
+step_2:
+            If wpnModel <> "" Then
+                'Primary Weapons
+                If wpnMenu = "1" OrElse wpnMenu = "2" OrElse wpnMenu = "3" OrElse wpnMenu = "4" OrElse wpnMenu = "5" AndAlso wpnPsub <> "p_Grenade_1" Then
+                    For pi As Integer = 0 To bteFormat.Count - 1
+                        wpnList1.Controls.AddRange(ucWpn)
+                        With ucWpn(pi)
+                            .Name = "ucWeapon" + pi.ToString
+                            .lbl_Name.Text = wpnName
+                            .lbl_Use.Text = wpnModel
+                            .PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\resource\wpnimg\" & .lbl_Use.Text & ".png")
+                        End With
+                    Next
+                    'Secondary Weapons
+                ElseIf wpnMenu = "0" Then
+                    For si As Integer = 0 To bteFormat.Count - 1
+                        wpnList2.Controls.AddRange(ucWpn)
+                        With ucWpn(si)
+                            .Name = "ucWeapon" + si.ToString
+                            .lbl_Name.Text = wpnName
+                            .lbl_Use.Text = wpnModel
+                            .PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\resource\wpnimg\" & .lbl_Use.Text & ".png")
+                        End With
+                    Next
+                    'Meelee Weapons
+                ElseIf wpnMenu = "6" Then
+                    For mi As Integer = 0 To bteFormat.Count - 1
+                        wpnList3.Controls.AddRange(ucWpn)
+                        With ucWpn(mi)
+                            .Name = "ucWeapon" + mi.ToString
+                            .lbl_Name.Text = wpnName
+                            .lbl_Use.Text = wpnModel
+                            .PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\resource\wpnimg\" & .lbl_Use.Text & ".png")
+                        End With
+                    Next
+                    'Grenades Weapons
+                ElseIf wpnMenu = "5" AndAlso wpnPsub = "p_Grenade_1" Then
+                    For gi As Integer = 0 To bteFormat.Count - 1
+                        wpnList4.Controls.AddRange(ucWpn)
+                        With ucWpn(gi)
+                            .Name = "ucWeapon" + gi.ToString
+                            .lbl_Name.Text = wpnName
+                            .lbl_Use.Text = wpnModel
+                            .PictureBox1.Image = Image.FromFile(My.Application.Info.DirectoryPath & "\launcher\resource\wpnimg\" & .lbl_Use.Text & ".png")
+                        End With
+                    Next
+                End If
+            End If
+        Next
+
+        
+    End Sub

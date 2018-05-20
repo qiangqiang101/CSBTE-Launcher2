@@ -1,0 +1,82 @@
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\bin\Release\BTELauncher.exe.config
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\ResolveAssemblyReference.cache
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\GenerateResource-ResGen.read.1.tlog
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\GenerateResource-ResGen.write.1.tlog
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\bin\Release\BTELauncher.exe
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\bin\Release\BTELauncher.pdb
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\bin\Release\BTELauncher.xml
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\bin\Release\DevComponents.DotNetBar.Keyboard.xml
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\bin\Release\DevComponents.DotNetBar.Schedule.xml
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\bin\Release\DevComponents.DotNetBar.SuperGrid.xml
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmBackground2.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmCangku.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmHLDS.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmJoin.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmLauncher.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmMode.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmMsgbox.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmOption.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmPlayer.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmQuickBuy.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmTeamSuit.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmWeapon.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.Resources.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\BTELauncher.exe
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\BTELauncher.xml
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\BTELauncher.pdb
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmNews.resources
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\ResGen.read.1.tlog
+D:\CS BTE\CS BTE Launcher\CS BTE Launcher\obj\x86\Release\ResGen.write.1.tlog
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\DevComponents.DotNetBar.Design.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\DevComponents.DotNetBar2.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\DevComponents.Instrumentation.Design.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\DevComponents.Instrumentation.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\DevComponents.TreeGX.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\DevComponents.DotNetBar2.xml
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\DevComponents.Instrumentation.xml
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\Interop.WMPLib.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\AxInterop.WMPLib.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\Interop.WMPLib.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\AxInterop.WMPLib.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS BTE Launcher.vbproj.ResolveComReference.cache
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmBuy.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmCreate.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmGamevb.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmMenu.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmParent.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmStore.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmBackground2.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmCangku.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmHLDS.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmJoin.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmLauncher.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmMode.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmMsgbox.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmNews.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmOption.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmPlayer.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmQuickBuy.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmWeapon.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.Resources.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmBarracks.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.ucBuyClass.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.ucBuyWeapon.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.ucClass.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.ucMyClass.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.ucMyWeapon.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.ucWeapon.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS BTE Launcher.vbproj.GenerateResource.Cache
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmLoading.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS BTE Launcher.vbprojResolveAssemblyReference.cache
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\cswd.exe.config
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\cswd.exe
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\cswd.pdb
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\cswd.xml
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\cswd.exe
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\cswd.xml
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\cswd.pdb
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.ucWeaponPanel.resources
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\CSBTE.dll
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\CSBTE.pdb
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\bin\Release\CSBTE.xml
+D:\CS BTE\CS BTE Launcher 2\CS BTE Launcher\obj\x86\Release\CS_BTE_Launcher.frmPause.resources

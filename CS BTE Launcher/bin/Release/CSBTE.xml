@@ -1,0 +1,3424 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CSBTE</name>
+    </assembly>
+    <members>
+        <member name="T:CSBTE.TeamScoreEventArgs">
+            <summary>
+            Provides data for event 065.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="T:CSBTE.GoldSrcEventArgs">
+            <summary>
+            AServerQuery.GoldSrcArgs is the base class for classes containing <see cref="T:CSBTE.GoldSrcServer"/> event data.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard"/>
+        </member>
+        <member name="M:CSBTE.GoldSrcEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.GoldSrcEventArgs"/> class.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.GoldSrcEventArgs.Event">
+            <summary>
+            Gets the <see cref="T:CSBTE.HLEvent"/> representing the event.
+            </summary>
+        </member>
+        <member name="P:CSBTE.GoldSrcEventArgs.EventName">
+            <summary>
+            Gets a <see cref="T:System.String"/> representing the event.
+            </summary>
+        </member>
+        <member name="P:CSBTE.GoldSrcEventArgs.LogLine">
+            <summary>
+            Gets a <see cref="T:System.String"/> containing the log line which was received from the game server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.GoldSrcEventArgs.Properties">
+            <summary>
+            Gets the case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </summary>
+        </member>
+        <member name="M:CSBTE.TeamScoreEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,System.String,System.Int32,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.TeamScoreEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Team">The team of the current score.</param>
+            <param name="Score">The team's score.</param>
+            <param name="NumPlayers">The number of players the team has.</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.TeamScoreEventArgs.Team">
+            <summary>
+            Gets the team of the current score.
+            </summary>
+        </member>
+        <member name="P:CSBTE.TeamScoreEventArgs.Score">
+            <summary>
+            Gets the team's score.
+            </summary>
+        </member>
+        <member name="P:CSBTE.TeamScoreEventArgs.NumPlayers">
+            <summary>
+            Gets the number of players the team has.
+            </summary>
+        </member>
+        <member name="T:CSBTE.ValveServer">
+            <summary>
+            Represents a Valve game server.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries" />
+        </member>
+        <member name="F:CSBTE.ValveServer.DefaultTimeOut">
+            <summary>
+            The default timeout for query requests.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.DateTimeFormat">
+            <summary>
+            The date and time format sent from the game server.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.EmptyChallenge">
+            <summary>
+            Represents an empty challenge.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.LogLineCommandIndex">
+            <summary>
+            The log line's regular expression's match command group index.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.LogLineDateTimeIndex">
+            <summary>
+            The log line's regular expression's match date and time group index.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.LogLineRegex">
+            <summary>
+            A regular expression pattern to match a log line.
+            </summary>
+            <remarks>
+            <para>The command index for the match should be referenced in the <see cref="F:CSBTE.ValveServer.LogLineCommandIndex"/>.</para>
+            <para>The date and time index for the match should be referenced in the <see cref="F:CSBTE.ValveServer.LogLineDateTimeIndex"/>.</para>
+            </remarks>
+        </member>
+        <member name="F:CSBTE.ValveServer.timeOut">
+            <summary>
+            The receive time-out in milliseconds for queries. 0 or -1 is infinite time-out period.
+            </summary>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnDataReceived(CSBTE.DataReceivedEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.DataReceived"/> event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnException(CSBTE.ExceptionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Exception"/> event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnCvarStart(CSBTE.InfoEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.CvarStart"/> (001a) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnCvar(CSBTE.CvarEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Cvar"/> (001b) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnCvarEnd(CSBTE.InfoEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.CvarEnd"/> (001c) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnLogFileStart(CSBTE.InfoEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.LogFileStart"/> (002a) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnLogFileClosed(CSBTE.InfoEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.LogFileClosed"/> (002b) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnMapLoading(CSBTE.ServerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.MapLoading"/> (003a) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnMapStarting(CSBTE.ServerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.MapStarting"/> (003b) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnRcon(CSBTE.RconEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Rcon"/> (004a) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnBadRcon(CSBTE.RconEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.BadRcon"/> (004b) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnServerName(CSBTE.ServerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.ServerName"/> (005) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnServerSay(CSBTE.ServerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.ServerSay"/> (006) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnConnection(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Connection"/> (050) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnValidation(CSBTE.PlayerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Validation"/> (050b) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnEnterGame(CSBTE.PlayerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.EnterGame"/> (051) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnDisconnection(CSBTE.PlayerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Disconnection"/> (052) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnKick(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Kick"/> (052b) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnSuicide(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Suicide"/> (053) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnTeamSelection(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.TeamSelection"/> (054) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnRoleSelection(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.RoleSelection"/> (055) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnChangeName(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.ChangeName"/> (056) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnKill(CSBTE.PlayerOnPlayerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Kill"/> (057) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnAttack(CSBTE.PlayerOnPlayerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Attack"/> (058) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnPlayerOnPlayer(CSBTE.PlayerOnPlayerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.PlayerOnPlayer"/> (059) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnPlayerAction(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.PlayerAction"/> (060) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnTeamAction(CSBTE.TeamEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.TeamAction"/> (061) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnWorldAction(CSBTE.ServerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.WorldAction"/> (062) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnChat(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.Chat"/> (063a) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnTeamChat(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.TeamChat"/> (063b) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnTeamAlliance(CSBTE.TeamEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.TeamAlliance"/> (064) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnTeamScore(CSBTE.TeamScoreEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.TeamScore"/> (065) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnPrivateChat(CSBTE.PlayerOnPlayerEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.PrivateChat"/> (066) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnPlayerScore(CSBTE.PlayerScoreEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.PlayerScore"/> (067) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnWeaponSelection(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.WeaponSelection"/> (068) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.OnWeaponPickup(CSBTE.PlayerActionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.ValveServer.WeaponPickup"/> (069) event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.ValveServer.#ctor">
+            <summary>
+            A default private constructor to set the default values.
+            </summary>
+        </member>
+        <member name="M:CSBTE.ValveServer.#ctor(System.Net.IPEndPoint)">
+            <summary>
+            Constructs the <see cref="T:CSBTE.ValveServer"/> instance with the given parameters.
+            </summary>
+            <param name="Server">The <see cref="T:System.Net.IPEndPoint"/> of the game server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="Server"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Net.Sockets.SocketException">
+            An error occurred when accessing the socket. See the Remarks section for more information.
+            </exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.#ctor(System.Net.IPEndPoint,System.String)">
+            <summary>
+            Constructs the <see cref="T:CSBTE.ValveServer"/> instance with the given parameters.
+            </summary>
+            <param name="Server">The <see cref="T:System.Net.IPEndPoint"/> of the game server.</param>
+            <param name="RconPassword">The Rcon password for the game server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="Server"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.Finalize">
+            <summary>
+            Finalizes the instance.
+            </summary>
+        </member>
+        <member name="M:CSBTE.ValveServer.Dispose">
+            <summary>
+            Closes the connection to the server and stops listening.
+            </summary>
+            <remarks>
+            This method does NOT remove the server from any registered logging servers.
+            </remarks>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.Dispose(System.Boolean)">
+            <summary>
+            Closes the connection to the server and stops listening.
+            </summary>
+            <remarks>
+            This method does NOT remove the server from any registered logging servers.
+            </remarks>
+            <param name="disposing"><see langword="true"/> if the data members should be disposed, <see langword="false"/> otherwise.</param>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.CheckDisposed">
+            <summary>
+            If the instance has been disposed, throws an appropriate exception.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> instance is disposed.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.ReceiveSplitPacket(System.Byte[],System.Net.Sockets.UdpClient)">
+            <summary>
+            Receives a splitted packet from the client. By default, this uses the OrangeBox engine's multi-packet response format (unless overridden).
+            </summary>
+            <param name="data">The packet containing the header.</param>
+            <param name="client">The client to read the splitted packets from.</param>
+            <returns>All of the data in the packets combined to one packet.</returns>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries" />
+        </member>
+        <member name="M:CSBTE.ValveServer.Query(System.Byte[])">
+            <summary>
+            Sends the given <paramref name="value"/> to the server
+            and returns the response combined to one <see cref="T:System.Byte"/> array.
+            </summary>
+            <remarks>
+            This method receives packets from the server according to the standard and arranges them in the correct order,
+            whilst if there were more than one packet received, combines them to one and alters the 4-byte header to match
+            the one packet response header (-1 or 0xFF, 0xFF, 0xFF, 0xFF).
+            </remarks>
+            <param name="value">The value to send to the game server.</param>
+            <returns>The response sent back from the game server combined to one <see cref="T:System.Byte"/> array.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+            <exception cref="T:CSBTE.UnknownHeaderException">Unknown header was received from the server.</exception>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries"/>
+        </member>
+        <member name="M:CSBTE.ValveServer.Query(System.Byte[],System.Int32)">
+            <summary>
+            Sends the given <paramref name="value"/> to the server using the given receive time-out value
+            and returns the response combined to one <see cref="T:System.Byte"/> array.
+            </summary>
+            <remarks>
+            This method receives packets from the server according to the standard and arranges them in the correct order,
+            whilst if there were more than one packet received, combines them to one and alters the 4-byte header to match
+            the one packet response header (-1 or 0xFF, 0xFF, 0xFF, 0xFF).
+            </remarks>
+            <param name="value">The value to send to the game server.</param>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>The response sent back from the game server combined to one <see cref="T:System.Byte"/> array.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.UnknownHeaderException">Unknown header was received from the server.</exception>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries"/>
+        </member>
+        <member name="M:CSBTE.ValveServer.Listen(System.Int32)">
+            <summary>
+            Starts listening to log data from the servers.
+            </summary>
+            <remarks>Responses are sent to the <see cref="M:CSBTE.ValveServer.OnDataReceived(CSBTE.DataReceivedEventArgs)"/> event or matched events.</remarks>
+            <param name="port">The local port to listen to the Rcon log with.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The port parameter is greater than <see cref="F:System.Net.IPEndPoint.MaxPort"/> or less
+            than <see cref="F:System.Net.IPEndPoint.MinPort"/>.
+            </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.AlreadyListeningException">
+            The <see cref="T:CSBTE.ValveServer"/> instance is already listening.
+            </exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.Listen(System.Net.IPEndPoint)">
+            <summary>
+            Starts listening to log data from the servers.
+            </summary>
+            <remarks>Responses are sent to the <see cref="M:CSBTE.ValveServer.OnDataReceived(CSBTE.DataReceivedEventArgs)"/> event or matched events.</remarks>
+            <param name="localEP">The local end-point to listen to the Rcon log with.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.AlreadyListeningException">
+            The <see cref="T:CSBTE.ValveServer"/> instance is already listening.
+            </exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.Stop">
+            <summary>
+            Stops listening to data received from the server.
+            </summary>
+            <remarks>
+            This method only stops listening to the log, it does NOT remove the server from any registered logging servers.
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.WaitForData(System.IAsyncResult)">
+            <summary>
+            Waits for data from the server.
+            </summary>
+        </member>
+        <member name="M:CSBTE.ValveServer.Ping(System.Net.IPEndPoint,System.Int32)">
+            <summary>
+            Pings the given game server.
+            </summary>
+            <param name="server">The game server to ping.</param>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns><see langword="true"/> if server has responded, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.Ping(System.Net.IPEndPoint)">
+            <summary>
+            Pings the given game server.
+            </summary>
+            <param name="server">The game server to ping.</param>
+            <remarks>The time-out used is <see cref="F:CSBTE.ValveServer.DefaultTimeOut"/>.</remarks>
+            <returns><see langword="true"/> if server has responded, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.Ping">
+            <summary>
+            Pings the game server.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns><see langword="true"/> if server has responded, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.Ping(System.Int32)">
+            <summary>
+            Pings the game server.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns><see langword="true"/> if server has responded, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetQueryChallenge">
+            <summary>
+            Queries the game server for a query challenge.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns>A challenge to be used in queries.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetQueryChallenge(System.Int32)">
+            <summary>
+            Queries the game server for a query challenge.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>A challenge to be used in queries.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetInfo">
+            <summary>
+            Queries the server for info.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns>A <see cref="T:CSBTE.ServerInfo"/> with the game server's info.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetInfo(System.Int32)">
+            <summary>
+            Queries the server for info.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>A <see cref="T:CSBTE.ServerInfo"/> with the game server's info.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetPlayers">
+            <summary>
+            Queries the server for the players.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:CSBTE.PlayerInfo"/> representing the
+            players in the server.
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadQueryChallengeException">Server has returned an empty query challenge.</exception>
+            <exception cref="T:CSBTE.UnknownHeaderException">Response was not the expected type.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetPlayers(System.Int32)">
+            <summary>
+            Queries the server for the players.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>
+            A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:CSBTE.PlayerInfo"/> representing the
+            players in the server.
+            </returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadQueryChallengeException">Server has returned an empty query challenge.</exception>
+            <exception cref="T:CSBTE.UnknownHeaderException">Response was not the expected type.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetRules">
+            <summary>
+            Queries the server for rules.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Collections.Generic.KeyValuePair`2"/> (String, String) of the game server's rules.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadQueryChallengeException">Server has returned an empty query challenge.</exception>
+            <exception cref="T:CSBTE.UnknownHeaderException">Response was not the expected type.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.GetRules(System.Int32)">
+            <summary>
+            Queries the server for rules.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Collections.Generic.KeyValuePair`2"/> (String, String) of the game server's rules.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.ValveServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadQueryChallengeException">Server has returned an empty query challenge.</exception>
+            <exception cref="T:CSBTE.UnknownHeaderException">Response was not the expected type.</exception>
+        </member>
+        <member name="M:CSBTE.ValveServer.ParseProperties(System.String)">
+            <summary>
+            Parse the given properties according to the log standard.
+            </summary>
+            <param name="value">The properties string to parse.</param>
+            <returns>
+            A case insensative <see cref="T:System.Collections.Generic.Dictionary`2"/>
+            containing the properties and their values.
+            </returns>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#Notes"/>
+        </member>
+        <member name="M:CSBTE.ValveServer.ProcessLog(System.String)">
+            <summary>
+            Processes the given log data.
+            </summary>
+            <remarks>
+            Unknown events are thrown to the <see cref="E:CSBTE.ValveServer.Exception"/> event
+            with an <see cref="T:CSBTE.UnknownEventException"/> exception.
+            </remarks>
+            <param name="value">A log line to process.</param>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard"/>
+        </member>
+        <member name="E:CSBTE.ValveServer.DataReceived">
+            <summary>
+            An event to handle all received data from the server before it is being parsed and processed.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Exception">
+            <summary>
+            An event to handle exceptions being throwen inside the listening thread.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.CvarStart">
+            <summary>
+            Event 001a. Occurs when the server cvars start.
+            <para>In TFC, if tfc_clanbattle is 1, this doesn't happen.</para>
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Cvar">
+            <summary>
+            Event 001b. Occurs when a cvar value is changed.
+            <para>This is executed both at the beginning of a round and whenever someone changes a cvar over rcon.</para>
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.CvarEnd">
+            <summary>
+            Event 001c. Occurs when the server cvars end.
+            <para>In TFC, if tfc_clanbattle is 0, this doesn't happen. You can instead use 005, since it comes right after.</para>
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.LogFileStart">
+            <summary>
+            Event 002a. Occurs when a log file starts.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.LogFileClosed">
+            <summary>
+            Event 002b. Occurs when a log file closes.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.MapLoading">
+            <summary>
+            Event 003a. Occurs when a map loads.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.MapStarting">
+            <summary>
+            Event 003b. Occurs when a map starts.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Rcon">
+            <summary>
+            Event 004a. Occurs when a rcon command is sent.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.BadRcon">
+            <summary>
+            Event 004b. Occurs when a bad rcon command is sent.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.ServerName">
+            <summary>
+            Event 005. Occurs when the server displays its name.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.ServerSay">
+            <summary>
+            Event 006. Occurs when the server says a message.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Connection">
+            <summary>
+            Event 050. Occurs when a player connects to the server.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Validation">
+            <summary>
+            Event 050b. Occurs when a player is validated.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.EnterGame">
+            <summary>
+            Event 051. Occurs when a player enters the game.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Disconnection">
+            <summary>
+            Event 052. Occurs when a player disconnects.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Kick">
+            <summary>
+            Event 052b. Occurs when a player is kicked from the server.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Suicide">
+            <summary>
+            Event 053. Occurs when a player commits suicide.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.TeamSelection">
+            <summary>
+            Event 054. Occurs when a player selects a team.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.RoleSelection">
+            <summary>
+            Event 055. Occurs when a player selects a role.
+            <para>This event covers classes in games like TFC, FLF and DOD.</para>
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.ChangeName">
+            <summary>
+            Event 056. Occurs when a player changes his name.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Kill">
+            <summary>
+            Event 057. Occurs when a player kills another player.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Attack">
+            <summary>
+            Event 058. Occurs when a player attacks another player.
+            <para>This event allows for recording of partial kills and teammate friendly-fire injuries.
+            If the injury results in a kill, a Kill message (057) should be logged instead/also.</para>
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.PlayerOnPlayer">
+            <summary>
+            Event 059. Occurs when a player triggers an action on another player.
+            <para>This event allows for logging of a wide range of events where one player performs an action on another player.
+            For example, in TFC this event may cover medic healings and infections, sentry gun destruction, spy uncovering, etc.</para>
+            <para>More detail about the action can be given by appending more properties to the end of the event.</para>
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.PlayerAction">
+            <summary>
+            Event 060. Occurs when a player commits an action.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.TeamAction">
+            <summary>
+            Event 061. Occurs when a team commits an action.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.WorldAction">
+            <summary>
+            Event 062. Occurs when the wolrd commits an action.
+            <para>This event allows logging of anything which does not happen in response to the actions of a player or team.
+            For example a gate opening at the start of a round.</para>
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.Chat">
+            <summary>
+            Event 063a. Occurs when a player sends a message to the server.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.TeamChat">
+            <summary>
+            Event 063b. Occurs when a player sends a message to his team.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.TeamAlliance">
+            <summary>
+            Event 064. Occurs when a team forms an alliance.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.TeamScore">
+            <summary>
+            Event 065. Occurs when a team's score is displayed.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.PrivateChat">
+            <summary>
+            Event 066. Occurs when a player private messages another player.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.PlayerScore">
+            <summary>
+            Event 067. Occurs when a player's score is displayed.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.WeaponSelection">
+            <summary>
+            Event 068. Occurs when a player selects a weapon.
+            </summary>
+        </member>
+        <member name="E:CSBTE.ValveServer.WeaponPickup">
+            <summary>
+            Event 069. Occurs when a player picks up a weapon.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ValveServer.IsDisposed">
+            <summary>
+            Gets whether this instance is disposed or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ValveServer.IsListening">
+            <summary>
+            Gets whether this instance is listening for incoming data or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ValveServer.LogClient">
+            <summary>
+            Gets the <see cref="T:System.Net.Sockets.UdpClient"/> used to listen to logs from the game server.
+            </summary>
+            <value>The log listener for the server.</value>
+        </member>
+        <member name="P:CSBTE.ValveServer.LogClientLocker">
+            <summary>
+            Gets the lock which makes sure the log listening will be safe.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ValveServer.RconPassword">
+            <summary>
+            Gets or sets the server's Rcon password.
+            </summary>
+            <value>The server's Rcon password.</value>
+        </member>
+        <member name="P:CSBTE.ValveServer.Server">
+            <summary>
+            Gets the <see cref="T:System.Net.IPEndPoint"/> of the remote server.
+            </summary>
+            <value>The remote server's address.</value>
+        </member>
+        <member name="P:CSBTE.ValveServer.TimeOut">
+            <summary>
+            Gets or sets the receive time-out in milliseconds for queries.
+            </summary>
+            <value>The receive time-out in milliseconds for queries. 0 or -1 is infinite time-out period.</value>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="value"/> is less than -1.</exception>
+        </member>
+        <member name="T:CSBTE.ValveServer.Queries">
+            <summary>
+            Contains Valve server queries and useful query constants.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries" />
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.GoldSrcSplitPacketsHeaderLength">
+            <summary>
+            The GoldSrc engine split packets' header's length in bytes.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.SourceSplitPacketsHeaderLength">
+            <summary>
+            The Source engine split packets' header's length in bytes.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.OrangeBoxSplitPacketsHeaderLength">
+            <summary>
+            The OrangeBox engine split packets' header's length in bytes.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.OnePacketHeader">
+            <summary>
+            A packet header to indicate that only one packet was sent or received, according to the HL protocol.
+            </summary>
+            <remarks>After a one packet header comes the data. Split packets have a longer header.</remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries#Protocol" />
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.SplitPacketsHeader">
+            <summary>
+            A packet header to indicate that more than one packet was sent or received, according to the HL protocol.
+            </summary>
+            <remarks>
+            <para>Split packets have a longer header with more information in it.</para>
+            <para>For more information see the protocol section of the server queries information page.</para>
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries#Protocol" />
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.A2A_PING">
+            <summary>
+            Ping the server to see if it exists, this can be used to calculate the latency to the server.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.A2S_SERVERQUERY_GETCHALLENGE">
+            <summary>
+            Challenge values are required for A2S_PLAYER and A2S_RULES requests, you can use this request to get one.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.A2S_INFO">
+            <summary>
+            Server info can be requested by sending the following byte values in a UDP packet to the server.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.A2S_PLAYER_NO_CHALLENGE">
+            <summary>
+            The challenge number can either be set to -1 (0xFF FF FF FF) to have the server reply with S2C_CHALLENGE, or use the value from a previous A2S_SERVERQUERY_GETCHALLENGE request.
+            </summary>
+        </member>
+        <member name="F:CSBTE.ValveServer.Queries.A2S_RULES_NO_CHALLENGE">
+            <summary>
+            The challenge number can either be set to -1 (0xFF FF FF FF) to have the server reply with S2C_CHALLENGE, or use the value from a previous A2S_SERVERQUERY_GETCHALLENGE request.
+            </summary>
+        </member>
+        <member name="T:CSBTE.UserInfo">
+            <summary>
+            Represents a user's info as responded from the server by a "status" Rcon query.
+            </summary>
+        </member>
+        <member name="F:CSBTE.UserInfo.UserPattern">
+            <summary>
+            The <see cref="T:System.Text.RegularExpressions.Regex"/> pattern to match the user to.
+            </summary>
+        </member>
+        <member name="M:CSBTE.UserInfo.#ctor">
+            <summary>
+            Protected default constructor to be used by the Parse commands.
+            </summary>
+        </member>
+        <member name="M:CSBTE.UserInfo.#ctor(System.String,System.Int32,System.String,System.Int32,System.TimeSpan,System.Int32,System.Int32,System.Net.IPEndPoint)">
+            <summary>
+            Constructs the UserInfo instance.
+            </summary>
+            <param name="Name">The user's name.</param>
+            <param name="UserID">The user's ID.</param>
+            <param name="UniqueID">The user's unique ID (such as AuthID or "HLTV" for HLTVs).</param>
+            <param name="Frag">The user's frag count.</param>
+            <param name="Time">The user's time in the game server.</param>
+            <param name="Ping">The user's ping.</param>
+            <param name="Loss">The user's packet loss.</param>
+            <param name="Address">The user's address.</param>
+        </member>
+        <member name="M:CSBTE.UserInfo.TryParse(System.String,CSBTE.UserInfo@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a user's info to
+            its <see cref="T:CSBTE.UserInfo"/> equivalent. A return value indicates
+            whether the conversion succeeded.
+            </summary>
+            <param name="value">A string representing a user's info to convert.</param>
+            <param name="user">
+            When this method returns, contains the user's info value equivalent
+            to the string contained in <paramref name="value"/>, if the conversion succeeded, or <see langword="null"/> if the
+            conversion failed. This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.UserInfo.Parse(System.String)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a user's info to
+            its <see cref="T:CSBTE.UserInfo"/> equivalent.
+            </summary>
+            <param name="value">A string representing a user's info to convert.</param>
+            <returns>A user's info represented by the given <paramref name="value"/>.</returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.UserInfo"/>.</exception>
+        </member>
+        <member name="M:CSBTE.UserInfo.InternalParse(System.String,System.Boolean)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a user's info to
+            its <see cref="T:CSBTE.UserInfo"/> equivalent.
+            </summary>
+            <param name="value">A string representing a user's info to convert.</param>
+            <param name="tryParse"><see langword="true"/> to suppress exceptions, <see langword="false"/> otherwise.</param>
+            <returns>
+            A user's info represented by the given <paramref name="value"/>.
+            <see langword="null"/> if <paramref name="value"/> is not a valid <see cref="T:CSBTE.UserInfo"/> and <paramref name="tryParse"/> is <see langword="true"/>.
+            </returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.UserInfo"/>.</exception>
+        </member>
+        <member name="P:CSBTE.UserInfo.UserID">
+            <summary>
+            Gets the user's ID.
+            </summary>
+        </member>
+        <member name="P:CSBTE.UserInfo.Name">
+            <summary>
+            Gets the user's name.
+            </summary>
+        </member>
+        <member name="P:CSBTE.UserInfo.UniqueID">
+            <summary>
+            Gets the user's unique ID.
+            </summary>
+        </member>
+        <member name="P:CSBTE.UserInfo.Frag">
+            <summary>
+            Gets the user's frag count.
+            </summary>
+            <remarks>Does not exist if the user is HLTV.</remarks>
+        </member>
+        <member name="P:CSBTE.UserInfo.Time">
+            <summary>
+            Gets the time the user has been connected to the server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.UserInfo.Ping">
+            <summary>
+            Gets the user's ping.
+            </summary>
+            <remarks>Does not exist if the user is HLTV.</remarks>
+        </member>
+        <member name="P:CSBTE.UserInfo.Loss">
+            <summary>
+            Gets the user's loss.
+            </summary>
+            <remarks>Does not exist if the user is HLTV.</remarks>
+        </member>
+        <member name="P:CSBTE.UserInfo.Address">
+            <summary>
+            Gets the user's address and port.
+            </summary>
+        </member>
+        <member name="P:CSBTE.UserInfo.IsHltv">
+            <summary>
+            Gets whether the user is a HLTV or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.UserInfo.Data">
+            <summary>
+            Gets the original given data which was parsed.
+            </summary>
+        </member>
+        <member name="T:CSBTE.ServerEventArgs">
+            <summary>
+            Provides data for events 062, 003 (a+b), 005 and 006.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.ServerEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.ServerEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Noun">The noun in the action (action/map/hostname/message).</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.ServerEventArgs.Noun">
+            <summary>
+            Gets the noun in the action (action/map/hostname/message).
+            </summary>
+        </member>
+        <member name="T:CSBTE.PlayerOnPlayerEventArgs">
+            <summary>
+            Provides data for events 057, 058, 059 and 066.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.PlayerOnPlayerEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,CSBTE.Player,CSBTE.Player,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.PlayerOnPlayerEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Triggerer">The player who triggered the action.</param>
+            <param name="Target">The target player on the action.</param>
+            <param name="Noun">The noun in the action (weapon/action/message).</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.PlayerOnPlayerEventArgs.Triggerer">
+            <summary>
+            Gets the <see cref="T:CSBTE.Player"/> representing the player who triggered the action.
+            </summary>
+        </member>
+        <member name="P:CSBTE.PlayerOnPlayerEventArgs.Target">
+            <summary>
+            Gets the <see cref="T:CSBTE.Player"/> representing the target player on the action.
+            </summary>
+        </member>
+        <member name="P:CSBTE.PlayerOnPlayerEventArgs.Noun">
+            <summary>
+            Gets the noun in the action (weapon/action/message).
+            </summary>
+        </member>
+        <member name="T:CSBTE.ServerInfo">
+            <summary>
+            Represents a server's info as responded from the server by an A2S_INFO query.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries#A2S_INFO" />
+        </member>
+        <member name="M:CSBTE.ServerInfo.#ctor">
+            <summary>
+            Private default constructor to be used by the Parse commands.
+            </summary>
+        </member>
+        <member name="M:CSBTE.ServerInfo.TryParse(System.Byte[],CSBTE.ServerInfo@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a server's info to
+            its <see cref="T:CSBTE.ServerInfo"/> equivalent. A return value indicates
+            whether the conversion succeeded.
+            </summary>
+            <param name="value">A byte array representing a server's info to convert.</param>
+            <param name="info">
+            When this method returns, contains the server's info value equivalent to the byte array
+            contained in <paramref name="value"/>, if the conversion succeeded, or <see langword="null"/> if the
+            conversion failed. This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.ServerInfo.Parse(System.Byte[])">
+            <summary>
+            Converts the given <paramref name="value"/> representing a server's info to
+            its <see cref="T:CSBTE.ServerInfo"/> equivalent.
+            </summary>
+            <param name="value">A byte array representing a server's info to convert.</param>
+            <returns>A server's info represented by the given <paramref name="value"/>.</returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.ServerInfo"/>.</exception>
+        </member>
+        <member name="M:CSBTE.ServerInfo.InternalParse(System.Byte[],System.Boolean)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a server's info to
+            its <see cref="T:CSBTE.ServerInfo"/> equivalent.
+            </summary>
+            <param name="value">A byte array representing a server's info to convert.</param>
+            <param name="tryParse"><see langword="true"/> to suppress exceptions, <see langword="false"/> otherwise.</param>
+            <returns>
+            A server's info represented by the given <paramref name="value"/>.
+            <see langword="null"/> if <paramref name="value"/> is not a valid <see cref="T:CSBTE.ServerInfo"/> and <paramref name="tryParse"/> is <see langword="true"/>.
+            </returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.ServerInfo"/>.</exception>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Type">
+            <summary>
+            Gets the type of the info.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Version">
+            <summary>
+            Gets the network version. Also refered to as protocol version.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.GameIP">
+            <summary>
+            Gets the game server IP address and port.
+            <para>Exists only in old GoldSrc servers where Type == 'm' (0x6D).</para>
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.ServerName">
+            <summary>
+            Gets the server's name.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Map">
+            <summary>
+            Gets the current map being played.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.GameDir">
+            <summary>
+            Gets the name of the folder containing the game files.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.GameDesc">
+            <summary>
+            Gets a friendly name for the game type.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.AppID">
+            <summary>
+            Gets the Steam Application ID.
+            <para>Exists only in new GoldSrc servers or Source servers where Type == 'I' (0x49).</para>
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/Steam_Application_IDs" />
+        </member>
+        <member name="P:CSBTE.ServerInfo.NumPlayers">
+            <summary>
+            Gets the number of players currently on the server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.MaxPlayers">
+            <summary>
+            Gets the maximum allowed players for the server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.NumBots">
+            <summary>
+            Gets the number of bot players currently on the server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Dedicated">
+            <summary>
+            'l' for listen, 'd' for dedicated, 'p' for HLTV\SourceTV.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.OS">
+            <summary>
+            Gets the host operating system. 'l' for Linux, 'w' for Windows.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Password">
+            <summary>
+            Gets whether a password is required to join this server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.IsMod">
+            <summary>
+            Gets whether the ModInfo is also received.
+            <para>Exists only in old GoldSrc servers where Type == 'm' (0x6D).</para>
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Mod">
+            <summary>
+            Gets the ModInfo that was received with the info.
+            <para>Exists only in old GoldSrc servers where Type == 'm' (0x6D).</para>
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Secure">
+            <summary>
+            Gets whether this server is VAC secured.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.GameVersion">
+            <summary>
+            Gets the version of the game.
+            <para>Exists only in new GoldSrc servers or Source servers where Type == 'I' (0x49).</para>
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.EDF">
+            <summary>
+            If present, this specifies which additional data fields is included.
+            <para>Exists only in new GoldSrc servers or Source servers where Type == 'I' (0x49).</para>
+            </summary>
+        </member>
+        <member name="P:CSBTE.ServerInfo.Data">
+            <summary>
+            Gets the original given data which was parsed.
+            </summary>
+        </member>
+        <member name="T:CSBTE.GoldSrcServer">
+            <summary>
+            Represents a GoldSource game server.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries" />
+        </member>
+        <member name="T:CSBTE.IRconable">
+            <summary>
+            Defines methods to Rcon a game server.
+            </summary>
+        </member>
+        <member name="M:CSBTE.IRconable.ConnectRcon">
+            <summary>
+            Connects the instance to the game server's Rcon.
+            </summary>
+            <returns>Whether the connection was successful or not.</returns>
+        </member>
+        <member name="M:CSBTE.IRconable.DisconnectRcon">
+            <summary>
+            Disconnects from the game server's Rcon.
+            </summary>
+        </member>
+        <member name="M:CSBTE.IRconable.QueryRcon(System.String)">
+            <summary>
+            Sends the server an Rcon command and returns the game server's response.
+            </summary>
+            <param name="value">The Rcon command to send to the game server.</param>
+            <returns>The server's response.</returns>
+        </member>
+        <member name="M:CSBTE.IRconable.GetCvar(System.String)">
+            <summary>
+            Queries the game server for the requested Cvar and returns its value.
+            </summary>
+            <param name="value">The Cvar name to request its value from the game server.</param>
+            <returns>The value of the requested Cvar.</returns>
+        </member>
+        <member name="M:CSBTE.IRconable.SetCvar(System.String,System.String)">
+            <summary>
+            Sets the given Cvar with the given value.
+            </summary>
+            <param name="cvar">The Cvar name to set its value on the game server.</param>
+            <param name="value">The value to set the Cvar to.</param>
+        </member>
+        <member name="M:CSBTE.IRconable.IsLogging">
+            <summary>
+            Determins whether the game server is logging or not.
+            </summary>
+            <returns><see langword="true" /> if the game server is logging, <see langword="false" /> otherwise.</returns>
+        </member>
+        <member name="M:CSBTE.IRconable.StartLog">
+            <summary>
+            Starts the log on the game server.
+            </summary>
+        </member>
+        <member name="M:CSBTE.IRconable.StopLog">
+            <summary>
+            Stops the log on the game server.
+            </summary>
+        </member>
+        <member name="M:CSBTE.IRconable.GetLogAddresses">
+            <summary>
+            Queries the game server for the list of the current address list to which the server is logging to.
+            </summary>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Net.IPEndPoint"/> of the log addresses on the server.</returns>
+        </member>
+        <member name="M:CSBTE.IRconable.AddLogAddress(System.Net.IPEndPoint)">
+            <summary>
+            Queries the game server to add the given <paramref name="value"/> to the logging addresses.
+            </summary>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to add to the log addresses.</param>
+        </member>
+        <member name="M:CSBTE.IRconable.DeleteLogAddress(System.Net.IPEndPoint)">
+            <summary>
+            Queries the game server to delete the given <paramref name="value"/> from the logging addresses.
+            </summary>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to delete from the log addresses.</param>
+        </member>
+        <member name="M:CSBTE.IRconable.GetStatus">
+            <summary>
+            Queries the game server for the status.
+            </summary>
+            <returns>A <see cref="T:CSBTE.StatusInfo"/> representing the game server's Rcon status.</returns>
+        </member>
+        <member name="P:CSBTE.IRconable.RconPassword">
+            <summary>
+            Gets the game server's Rcon password.
+            </summary>
+            <value>The game server's Rcon password.</value>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.#ctor(System.Net.IPEndPoint)">
+            <summary>
+            Constructs the <see cref="T:CSBTE.GoldSrcServer"/> instance with the given parameters.
+            </summary>
+            <param name="server">The <see cref="T:System.Net.IPEndPoint"/> of the game server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="server"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Net.Sockets.SocketException">
+            An error occurred when accessing the socket. See the Remarks section for more information.
+            </exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.#ctor(System.Net.IPEndPoint,System.String)">
+            <summary>
+            Constructs the <see cref="T:CSBTE.GoldSrcServer"/> instance with the given parameters.
+            </summary>
+            <param name="server">The <see cref="T:System.Net.IPEndPoint"/> of the game server.</param>
+            <param name="rconPassword">The Rcon password for the game server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="server"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.Finalize">
+            <summary>
+            Finalizes the instance.
+            </summary>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.Dispose(System.Boolean)">
+            <summary>
+            Closes the connection to the server and stops listening.
+            </summary>
+            <remarks>
+            This method does NOT remove the server from any registered logging servers.
+            </remarks>
+            <param name="disposing"><see langword="true"/> if the data members should be disposed, <see langword="false"/> otherwise.</param>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.Send(System.Byte[])">
+            <summary>
+            Sends the given <paramref name="value"/> to the game server.
+            </summary>
+            <param name="value">The value to send to the game server.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.ReceiveSplitPacket(System.Byte[],System.Net.Sockets.UdpClient)">
+            <summary>
+            Receives a splitted packet from the client.
+            </summary>
+            <param name="data">The packet containing the header.</param>
+            <param name="client">The client to read the splitted packets from.</param>
+            <returns>All of the data in the packets combined to one packet.</returns>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.ConnectRcon">
+            <summary>
+            Connects the instance to the game server's Rcon.
+            </summary>
+            <returns>Whether the connection was successful or not.</returns>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.DisconnectRcon">
+            <summary>
+            Clears the Rcon challenge.
+            </summary>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.ChallengeRcon">
+            <summary>
+            Requests the Rcon challenge number and sets it at <see cref="P:CSBTE.GoldSrcServer.RconChallenge"/>.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">Server has returned an empty Rcon challenge.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.ChallengeRcon(System.Int32)">
+            <summary>
+            Requests the Rcon challenge number and sets it at <see cref="P:CSBTE.GoldSrcServer.RconChallenge"/>.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">Server has returned an empty Rcon challenge.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.SendRcon(System.String)">
+            <summary>
+            Sends the game server an Rcon command. 
+            </summary>
+            <remarks>
+            <para>This method ignores the response sent from the server after sending the <paramref name="value"/>,
+            which means if a wrong password is set - there won't be a reply or any exception be thrown.</para>
+            <para>If you need a reply or exceptions such as <see cref="T:CSBTE.BadRconPasswordException"/>
+            or <see cref="T:CSBTE.BadRconChallengeException"/> to be thrown, use the
+            <see cref="M:CSBTE.GoldSrcServer.QueryRcon(System.String)"/> method.</para>
+            </remarks>
+            <param name="value">The Rcon command to send to the game server.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.QueryRcon(System.String)">
+            <summary>
+            Sends the server an Rcon command and returns the game server's response.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <param name="value">The Rcon command to send to the game server.</param>
+            <returns>The server's response.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.QueryRcon(System.String,System.Int32)">
+            <summary>
+            Sends the server an Rcon command and returns the game server's response.
+            </summary>
+            <param name="value">The Rcon command to send to the game server.</param>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>The server's response.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.IsRconPasswordValid">
+            <summary>
+            Determins whether the Rcon password is correct and valid.
+            </summary>
+            <remarks>
+            <para>This method challenges the Rcon if it was still empty.</para>
+            <para>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</para>
+            </remarks>
+            <returns><see langword="true"/> if the password is correct, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.IsRconPasswordValid(System.Int32)">
+            <summary>
+            Determins whether the Rcon password is correct and valid.
+            </summary>
+            <remarks>This method challenges the Rcon if it was still empty.</remarks>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns><see langword="true"/> if the password is correct, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.GetCvar(System.String)">
+            <summary>
+            Queries the game server for the requested Cvar and returns its value.
+            </summary>
+            <remarks>
+            <para>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</para>
+            <para>
+            If the cvar name was mistyped, the game server will not respond.
+            It's a good practice to set a time-out for this request and not leaving it at infinite.
+            </para>
+            </remarks>
+            <param name="value">The Cvar name to request its value from the game server.</param>
+            <returns>The value of the requested Cvar.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.GetCvar(System.String,System.Int32)">
+            <summary>
+            Queries the game server for the requested Cvar and returns its value.
+            </summary>
+            <remarks>
+            If the cvar name was mistyped, the game server will not respond.
+            It's a good practice to set a time-out for this request and not leaving it at infinite.
+            </remarks>
+            <param name="value">The Cvar name to request its value from the game server.</param>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>The value of the requested Cvar.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+            <exception cref="T:System.FormatException">If the game server's response was invalid.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.SetCvar(System.String,System.String)">
+            <summary>
+            Sets the given Cvar with the given value.
+            </summary>
+            <param name="cvar">The Cvar name to set its value on the game server.</param>
+            <param name="value">The value to set the Cvar to.</param>
+            <remarks>
+            <para>This method ignores the response sent from the server after sending the Dgram to set the cvar,
+            which means if a wrong password is set - there won't be a reply or any exception be thrown.</para>
+            <para>If you need a reply or exceptions such as <see cref="T:CSBTE.BadRconPasswordException"/>
+            or <see cref="T:CSBTE.BadRconChallengeException"/> to be thrown, use the
+            <see cref="M:CSBTE.GoldSrcServer.QueryRcon(System.String)"/> method with a value of
+            "<paramref name="cvar"/> \"<paramref name="value"/>\"".</para>
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentNullException">The given <paramref name="cvar"/> name is null or empty.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.IsLogging">
+            <summary>
+            Determins whether the game server is logging or not.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns><see langword="true"/> if the game server is logging, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.IsLogging(System.Int32)">
+            <summary>
+            Determins whether the game server is logging or not.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns><see langword="true"/> if the game server is logging, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.StartLog">
+            <summary>
+            Starts the log on the game server.
+            </summary>
+            <remarks>
+            <para>This method ignores the response sent from the server after sending the Dgram to start the log,
+            which means if a wrong password is set - there won't be a reply or any exception be thrown.</para>
+            <para>If you need a reply or exceptions such as <see cref="T:CSBTE.BadRconPasswordException"/>
+            or <see cref="T:CSBTE.BadRconChallengeException"/> to be thrown, use the
+            <see cref="M:CSBTE.GoldSrcServer.QueryRcon(System.String)"/> method with a value of "log on".</para>
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.StopLog">
+            <summary>
+            Stops the log on the game server.
+            </summary>
+            <remarks>
+            <para>This method ignores the response sent from the server after sending the Dgram to start the log,
+            which means if a wrong password is set - there won't be a reply or any exception be thrown.</para>
+            <para>If you need a reply or exceptions such as <see cref="T:CSBTE.BadRconPasswordException"/>
+            or <see cref="T:CSBTE.BadRconChallengeException"/> to be thrown, use the
+            <see cref="M:CSBTE.GoldSrcServer.QueryRcon(System.String)"/> method with a value of "log off".</para>
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.GetLogAddresses">
+            <summary>
+            Queries the game server for the list of the current address list to which the server is logging to.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Net.IPEndPoint"/> of the log addresses on the server.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.GetLogAddresses(System.Int32)">
+            <summary>
+            Queries the game server for the list of the current address list to which the server is logging to.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Net.IPEndPoint"/> of the log addresses on the server.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.AddLogAddress(System.Net.IPEndPoint)">
+            <summary>
+            Queries the game server to add the given <paramref name="value"/> to the logging addresses.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to add to the log addresses.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+            <exception cref="T:CSBTE.UnableToResolveException">If the server was unable to resolve the address.</exception>
+            <exception cref="T:CSBTE.AddressAlreadyInListException">If the address is already in the logging list.</exception>
+            <exception cref="T:CSBTE.GameServerException">If the query responded with an unknown response.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.AddLogAddress(System.Net.IPEndPoint,System.Int32)">
+            <summary>
+            Queries the game server to add the given <paramref name="value"/> to the logging addresses.
+            </summary>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to add to the log addresses.</param>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+            <exception cref="T:CSBTE.UnableToResolveException">If the server was unable to resolve the address.</exception>
+            <exception cref="T:CSBTE.AddressAlreadyInListException">If the address is already in the logging list.</exception>
+            <exception cref="T:CSBTE.GameServerException">If the query responded with an unknown response.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.DeleteLogAddress(System.Net.IPEndPoint)">
+            <summary>
+            Queries the game server to delete the given <paramref name="value"/> from the logging addresses.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to delete from the log addresses.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+            <exception cref="T:CSBTE.UnableToResolveException">If the server was unable to resolve the address.</exception>
+            <exception cref="T:CSBTE.NoAddressesAddedException">If the address list is empty.</exception>
+            <exception cref="T:CSBTE.AddressNotFoundException">If the address couldn't be found in the list.</exception>
+            <exception cref="T:CSBTE.GameServerException">If the query responded with an unknown response.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.DeleteLogAddress(System.Net.IPEndPoint,System.Int32)">
+            <summary>
+            Queries the game server to delete the given <paramref name="value"/> from the logging addresses.
+            </summary>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to delete from the log addresses.</param>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+            <exception cref="T:CSBTE.UnableToResolveException">If the server was unable to resolve the address.</exception>
+            <exception cref="T:CSBTE.NoAddressesAddedException">If the address list is empty.</exception>
+            <exception cref="T:CSBTE.AddressNotFoundException">If the address couldn't be found in the list.</exception>
+            <exception cref="T:CSBTE.GameServerException">If the query responded with an unknown response.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.GetStatus">
+            <summary>
+            Queries the game server for the status.
+            </summary>
+            <remarks>The time-out used is the time-out which was set in <see cref="P:CSBTE.ValveServer.TimeOut"/>.</remarks>
+            <returns>A <see cref="T:CSBTE.StatusInfo"/> representing the game server's Rcon status.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="M:CSBTE.GoldSrcServer.GetStatus(System.Int32)">
+            <summary>
+            Queries the game server for the status.
+            </summary>
+            <param name="timeOut">Sets the receive time-out in milliseconds. 0 or -1 is infinite time-out period.</param>
+            <returns>A <see cref="T:CSBTE.StatusInfo"/> representing the game server's Rcon status.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.GoldSrcServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="timeOut"/> is less than -1.</exception>
+            <exception cref="T:CSBTE.BadRconChallengeException">If the Rcon challenge is incorrect.</exception>
+            <exception cref="T:CSBTE.BadRconPasswordException">If the Rcon password is incorrect.</exception>
+        </member>
+        <member name="P:CSBTE.GoldSrcServer.RconChallenge">
+            <summary>
+            Gets the Rcon challenge.
+            </summary>
+            <value>The Rcon challenge.</value>
+        </member>
+        <member name="T:CSBTE.RconEventArgs">
+            <summary>
+            Provides data for event 004 (a+b).
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.RconEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,System.Boolean,System.Int64,System.String,System.String,System.Net.IPEndPoint,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.RconEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="IsGood">true if the Rcon is good, false otherwise.</param>
+            <param name="Challenge">The Rcon challenge.</param>
+            <param name="Password">The Rcon password.</param>
+            <param name="Command">The Rcon command.</param>
+            <param name="Sender">The <see cref="T:System.Net.IPEndPoint"/> of the Rcon sender.</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.RconEventArgs.IsGood">
+            <summary>
+            Gets whether the Rcon is good or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.RconEventArgs.Challenge">
+            <summary>
+            Get the Rcon challenge.
+            </summary>
+        </member>
+        <member name="P:CSBTE.RconEventArgs.Password">
+            <summary>
+            Get the Rcon password.
+            </summary>
+        </member>
+        <member name="P:CSBTE.RconEventArgs.Command">
+            <summary>
+            Gets the Rcon command.
+            </summary>
+        </member>
+        <member name="P:CSBTE.RconEventArgs.Sender">
+            <summary>
+            Gets the <see cref="T:System.Net.IPEndPoint"/> of the Rcon sender.
+            </summary>
+        </member>
+        <member name="T:CSBTE.SourceServer">
+            <summary>
+            Represents a Source game server.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries" />
+            <seealso href="http://developer.valvesoftware.com/wiki/Source_RCON_Protocol" />
+        </member>
+        <member name="M:CSBTE.SourceServer.#ctor(System.Net.IPEndPoint)">
+            <summary>
+            Constructs the <see cref="T:CSBTE.SourceServer"/> instance with the given parameters.
+            </summary>
+            <param name="server">The <see cref="T:System.Net.IPEndPoint"/> of the game server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="server"/> is <see langword="null"/>.</exception>
+            <exception cref="T:System.Net.Sockets.SocketException">
+            An error occurred when accessing the socket. See the Remarks section for more information.
+            </exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.#ctor(System.Net.IPEndPoint,System.String)">
+            <summary>
+            Constructs the <see cref="T:CSBTE.SourceServer"/> instance with the given parameters.
+            </summary>
+            <param name="server">The <see cref="T:System.Net.IPEndPoint"/> of the game server.</param>
+            <param name="rconPassword">The Rcon password for the game server.</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="server"/> is <see langword="null"/>.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.Finalize">
+            <summary>
+            Finalizes the instance.
+            </summary>
+        </member>
+        <member name="M:CSBTE.SourceServer.Dispose(System.Boolean)">
+            <summary>
+            Closes the connection to the server and stops listening.
+            </summary>
+            <remarks>
+            This method does NOT remove the server from any registered logging servers.
+            </remarks>
+            <param name="disposing"><see langword="true"/> if the data members should be disposed, <see langword="false"/> otherwise.</param>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.GetNextPacketId">
+            <summary>
+            Gets the next request id to be used in the Rcon commands.
+            </summary>
+            <returns>The next packet id to be used in the Rcon commands.</returns>
+        </member>
+        <member name="M:CSBTE.SourceServer.ReceivePacket(System.Net.Sockets.NetworkStream)">
+            <summary>
+            Reads a packet from the stream and returns it.
+            </summary>
+            <param name="stream">The stream to read the packet from.</param>
+            <returns>The Rcon packet read.</returns>
+            <exception cref="T:System.FormatException">The bytes read from the stream are not a valid <see cref="T:CSBTE.SourceServer.RconPacket"/>.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.ConnectRcon">
+            <summary>
+            Connects the instance to the game server's Rcon.
+            </summary>
+            <returns>Whether the connection was successful or not.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.AlreadyConnectedException">
+            The <see cref="T:CSBTE.SourceServer"/> instance is already listening.
+            </exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.ConnectRcon(System.Net.IPEndPoint)">
+            <summary>
+            Connects the instance to the game server's Rcon.
+            </summary>
+            <param name="localEP">The local end-point to connect to the Rcon from.</param>
+            <returns>Whether the connection was successful or not.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.AlreadyConnectedException">
+            The <see cref="T:CSBTE.SourceServer"/> instance is already listening.
+            </exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.DisconnectRcon">
+            <summary>
+            Disconnects from the game server's Rcon.
+            </summary>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.QueryRcon(System.String)">
+            <summary>
+            Sends the server an Rcon command and returns the game server's response.
+            </summary>
+            <param name="value">The Rcon command to send to the game server.</param>
+            <returns>The server's response.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.GetCvar(System.String)">
+            <summary>
+            Queries the game server for the requested Cvar and returns its value.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <param name="value">The Cvar name to request its value from the game server.</param>
+            <returns>The value of the requested Cvar.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.FormatException">If the game server's response was invalid.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.SetCvar(System.String,System.String)">
+            <summary>
+            Sets the given Cvar with the given value.
+            </summary>
+            <param name="cvar">The Cvar name to set its value on the game server.</param>
+            <param name="value">The value to set the Cvar to.</param>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:System.ArgumentNullException">The given <paramref name="cvar"/> name is null or empty.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.IsLogging">
+            <summary>
+            Determins whether the game server is logging or not.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <returns><see langword="true"/> if the game server is logging, <see langword="false"/> otherwise.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.StartLog">
+            <summary>
+            Starts the log on the game server.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.StopLog">
+            <summary>
+            Stops the log on the game server.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.GetLogAddresses">
+            <summary>
+            Queries the game server for the list of the current address list to which the server is logging to.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <returns>A <see cref="T:System.Collections.Generic.IEnumerable`1"/> of <see cref="T:System.Net.IPEndPoint"/> of the log addresses on the server.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.AddLogAddress(System.Net.IPEndPoint)">
+            <summary>
+            Queries the game server to add the given <paramref name="value"/> to the logging addresses.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to add to the log addresses.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.UnableToResolveException">If the server was unable to resolve the address.</exception>
+            <exception cref="T:CSBTE.AddressAlreadyInListException">If the address is already in the logging list.</exception>
+            <exception cref="T:CSBTE.GameServerException">If the query responded with an unknown response.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.DeleteLogAddress(System.Net.IPEndPoint)">
+            <summary>
+            Queries the game server to delete the given <paramref name="value"/> from the logging addresses.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <param name="value">The <see cref="T:System.Net.IPEndPoint"/> to delete from the log addresses.</param>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.UnableToResolveException">If the server was unable to resolve the address.</exception>
+            <exception cref="T:CSBTE.NoAddressesAddedException">If the address list is empty.</exception>
+            <exception cref="T:CSBTE.AddressNotFoundException">If the address couldn't be found in the list.</exception>
+            <exception cref="T:CSBTE.GameServerException">If the query responded with an unknown response.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.GetStatus">
+            <summary>
+            Queries the game server for the status.
+            </summary>
+            <remarks>
+            The time-out used is the time-out set to the client, which was set in the <see cref="P:CSBTE.ValveServer.TimeOut"/>.
+            </remarks>
+            <returns>A <see cref="T:CSBTE.StatusInfo"/> representing the game server's Rcon status.</returns>
+            <exception cref="T:System.ObjectDisposedException">The <see cref="T:CSBTE.SourceServer"/> is disposed.</exception>
+            <exception cref="T:CSBTE.NotConnectedException">If the Rcon is not connected.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="P:CSBTE.SourceServer.IsConnected">
+            <summary>
+            Gets whether this instance is connected to the Rcon or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconClient">
+            <summary>
+            Gets the <see cref="T:System.Net.Sockets.TcpClient"/> used to connect to the Rcon of the game server.
+            </summary>
+            <value>The Rcon client for the server.</value>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconClientLocker">
+            <summary>
+            Gets the lock which makes sure the Rcon will be safe.
+            </summary>
+        </member>
+        <member name="P:CSBTE.SourceServer.PacketId">
+            <summary>
+            Gets the current Packet ID.
+            </summary>
+            <see cref="M:CSBTE.SourceServer.GetNextPacketId"/>
+        </member>
+        <member name="T:CSBTE.SourceServer.CommandType">
+            <summary>
+            Contains request and response codes constants.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/Source_RCON_Protocol" />
+        </member>
+        <member name="F:CSBTE.SourceServer.CommandType.SERVERDATA_RESPONSE_VALUE">
+            <summary>
+            The response command type (for executed commands or other info).
+            </summary>
+        </member>
+        <member name="F:CSBTE.SourceServer.CommandType.SERVERDATA_AUTH_RESPONSE">
+            <summary>
+            The response command type for authing.
+            </summary>
+        </member>
+        <member name="F:CSBTE.SourceServer.CommandType.SERVERDATA_EXECCOMMAND">
+            <summary>
+            The request command type for executing a command.
+            </summary>
+        </member>
+        <member name="F:CSBTE.SourceServer.CommandType.SERVERDATA_AUTH">
+            <summary>
+            The request command type for authing.
+            </summary>
+        </member>
+        <member name="T:CSBTE.SourceServer.RconPacket">
+            <summary>
+            Represents a Rcon packet.
+            </summary>
+        </member>
+        <member name="M:CSBTE.SourceServer.RconPacket.#ctor(System.Int32,CSBTE.SourceServer.CommandType,System.String)">
+            <summary>
+            Constructs the Rcon packet with the given details.
+            </summary>
+            <param name="packetId">The packet ID.</param>
+            <param name="command">The command type.</param>
+            <param name="body">The packet's body.</param>
+        </member>
+        <member name="M:CSBTE.SourceServer.RconPacket.GetBytes">
+            <summary>
+            Gets a byte array representing the Rcon packet.
+            </summary>
+            <returns>A byte array representing the Rcon packet.</returns>
+        </member>
+        <member name="M:CSBTE.SourceServer.RconPacket.TryParse(System.Byte[],CSBTE.SourceServer.RconPacket@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a Rcon packet to
+            its <see cref="T:CSBTE.SourceServer.RconPacket"/> equivalent. A return value indicates
+            whether the conversion succeeded.
+            </summary>
+            <param name="value">A byte array representing a Rcon packet to convert.</param>
+            <param name="packet">
+            When this method returns, contains the Rcon packet value equivalent to the byte array
+            contained in <paramref name="value"/>, if the conversion succeeded, or <see langword="null"/> if the
+            conversion failed. This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.SourceServer.RconPacket.Parse(System.Byte[])">
+            <summary>
+            Converts the given <paramref name="value"/> representing a Rcon packet to
+            its <see cref="T:CSBTE.SourceServer.RconPacket"/> equivalent.
+            </summary>
+            <param name="value">A byte array representing a Rcon packet to convert.</param>
+            <returns>A Rcon packet represented by the given <paramref name="value"/>.</returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.SourceServer.RconPacket"/>.</exception>
+        </member>
+        <member name="M:CSBTE.SourceServer.RconPacket.InternalParse(System.Byte[],System.Boolean)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a Rcon's packet info to
+            its <see cref="T:CSBTE.SourceServer.RconPacket"/> equivalent.
+            </summary>
+            <param name="value">A byte array representing a Rcon's packet info to convert.</param>
+            <param name="tryParse"><see langword="true"/> to suppress exceptions, <see langword="false"/> otherwise.</param>
+            <returns>
+            A Rcon packet represented by the given <paramref name="value"/>.
+            <see langword="null"/> if <paramref name="value"/> is not a valid <see cref="T:CSBTE.SourceServer.RconPacket"/> and <paramref name="tryParse"/> is <see langword="true"/>.
+            </returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.SourceServer.RconPacket"/>.</exception>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconPacket.HasAuthenticationFailed">
+            <summary>
+            Gets whether or not the authentication has failed or not. 
+            </summary>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconPacket.Size">
+            <summary>
+            Gets the packet size.
+            </summary>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconPacket.PacketId">
+            <summary>
+            Gets the ID for the packet.
+            </summary>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconPacket.Command">
+            <summary>
+            Gets the command type for the packet.
+            </summary>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconPacket.Body">
+            <summary>
+            Gets the body of the Rcon packet.
+            </summary>
+        </member>
+        <member name="P:CSBTE.SourceServer.RconPacket.Suffix">
+            <summary>
+            Gets the string which closes the packet.
+            </summary>
+        </member>
+        <member name="T:CSBTE.PlayerScoreEventArgs">
+            <summary>
+            Provides data for event 067.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.PlayerScoreEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,CSBTE.Player,System.Int32,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.PlayerScoreEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Triggerer">The player of the current score.</param>
+            <param name="Score">The player's score.</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.PlayerScoreEventArgs.Triggerer">
+            <summary>
+            Gets the player of the current score.
+            </summary>
+        </member>
+        <member name="P:CSBTE.PlayerScoreEventArgs.Score">
+            <summary>
+            Gets the player's score.
+            </summary>
+        </member>
+        <member name="M:CSBTE.Core.Register.GetKeyValue(CSBTE.Core.Register.RegHKey,System.String,System.String,System.Boolean)">
+            <summary>
+            Gets a value in the Windows registry.
+            </summary>
+        </member>
+        <member name="M:CSBTE.Core.Register.SetKeyValue(CSBTE.Core.Register.RegHKey,System.String,System.String,System.Object,Microsoft.Win32.RegistryValueKind,System.Boolean)">
+            <summary>
+            Sets a value in the Windows registry.
+            </summary>
+        </member>
+        <member name="T:CSBTE.GameServerException">
+            <summary>
+            The exception that is thrown when a game server error occurs.
+            </summary>
+        </member>
+        <member name="M:CSBTE.GameServerException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.GameServerException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="P:CSBTE.GameServerException.Response">
+            <summary>
+            The game server's original response which raised the exception.
+            </summary>
+        </member>
+        <member name="T:CSBTE.AlreadyConnectedException">
+            <summary>
+            The exception that is thrown when the instance is already connected.
+            </summary>
+        </member>
+        <member name="M:CSBTE.AlreadyConnectedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.AlreadyConnectedException"/> class
+            with the specified game server's response.
+            </summary>
+        </member>
+        <member name="T:CSBTE.AlreadyListeningException">
+            <summary>
+            The exception that is thrown when the instance is already listening.
+            </summary>
+        </member>
+        <member name="M:CSBTE.AlreadyListeningException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.AlreadyListeningException"/> class
+            with the specified game server's response.
+            </summary>
+        </member>
+        <member name="T:CSBTE.AddressAlreadyInListException">
+            <summary>
+            The exception that is thrown when the address which is trying to be added is already in the logging list.
+            </summary>
+        </member>
+        <member name="M:CSBTE.AddressAlreadyInListException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.AddressAlreadyInListException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.AddressNotFoundException">
+            <summary>
+            The exception that is thrown when the address which is trying to be deleted is not in the logging list.
+            </summary>
+        </member>
+        <member name="M:CSBTE.AddressNotFoundException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.AddressNotFoundException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.BadRconChallengeException">
+            <summary>
+            The exception that is thrown when a Rcon command was sent with the wrong Rcon challenge.
+            </summary>
+        </member>
+        <member name="M:CSBTE.BadRconChallengeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.BadRconChallengeException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.BadRconPasswordException">
+            <summary>
+            The exception that is thrown when a Rcon command was sent with the wrong Rcon password.
+            </summary>
+        </member>
+        <member name="M:CSBTE.BadRconPasswordException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.BadRconPasswordException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.BadQueryChallengeException">
+            <summary>
+            The exception that is thrown when a query was sent with the wrong query challenge.
+            </summary>
+        </member>
+        <member name="M:CSBTE.BadQueryChallengeException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.BadQueryChallengeException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.NotConnectedException">
+            <summary>
+            The exception that is thrown when the Rcon is not connected.
+            </summary>
+        </member>
+        <member name="M:CSBTE.NotConnectedException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.NotConnectedException"/> class
+            with the specified game server's response.
+            </summary>
+        </member>
+        <member name="T:CSBTE.NoAddressesAddedException">
+            <summary>
+            The exception that is thrown when there are no addesses in the list yet.
+            </summary>
+        </member>
+        <member name="M:CSBTE.NoAddressesAddedException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.NoAddressesAddedException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.UnableToResolveException">
+            <summary>
+            The exception that is thrown when the address could not be resolved.
+            </summary>
+        </member>
+        <member name="M:CSBTE.UnableToResolveException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.UnableToResolveException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.UnknownEventException">
+            <summary>
+            The exception that is thrown when an unknown event was received by the Rcon log.
+            </summary>
+        </member>
+        <member name="M:CSBTE.UnknownEventException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.UnknownEventException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.UnknownHeaderException">
+            <summary>
+            The exception that is thrown when an unknown header was received as response from a query or a Rcon command.
+            </summary>
+        </member>
+        <member name="M:CSBTE.UnknownHeaderException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.UnknownHeaderException"/> class
+            with the specified game server's response.
+            </summary>
+            <param name="response">The game server's response.</param>
+        </member>
+        <member name="T:CSBTE.InfoEventArgs">
+            <summary>
+            Provides data for events 001 (a+c) and 002 (a+b).
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.InfoEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.InfoEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="T:CSBTE.Player">
+            <summary>
+            Represents a player in the game server.
+            </summary>
+        </member>
+        <member name="F:CSBTE.Player.PlayerPattern">
+            <summary>
+            The <see cref="T:System.Text.RegularExpressions.Regex"/> pattern to match the player to.
+            </summary>
+        </member>
+        <member name="F:CSBTE.Player.Empty">
+            <summary>
+            Represents an empty player. This field is read-only.
+            </summary>
+        </member>
+        <member name="M:CSBTE.Player.#cctor">
+            <summary>
+            Generates the empty player.
+            </summary>
+        </member>
+        <member name="M:CSBTE.Player.#ctor(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            Constructs the Player instance.
+            </summary>
+            <param name="Nick">The player's nick.</param>
+            <param name="UID">The player's unique ID.</param>
+            <param name="AuthID">The player's AuthID.</param>
+            <param name="Team">The player's team.</param>
+        </member>
+        <member name="M:CSBTE.Player.ToString">
+            <summary>
+            Returns a string representing the player and his details.
+            </summary>
+            <returns>A string representing the player and his details.</returns>
+        </member>
+        <member name="M:CSBTE.Player.TryParse(System.String,CSBTE.Player@)">
+            <summary>
+            Converts the string representing the player to its <see cref="T:CSBTE.Player"/> equivalent.
+            A return value indicates whether the conversion succeeded.
+            </summary>
+            <param name="value">A string representing a player to convert.</param>
+            <param name="player">
+            When this method returns, contains the player value equivalent to the string contained in
+            <paramref name="value"/>, if the conversion succeeded, or <see cref="F:CSBTE.Player.Empty"/> player if the conversion failed.
+            This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.Player.Parse(System.String)">
+            <summary>
+            Converts the string representing the player to its <see cref="T:CSBTE.Player"/> equivalent.
+            </summary>
+            <param name="value">A string representing a player to convert.</param>
+            <returns>A player represented by the given string.</returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.Player"/>.</exception>
+        </member>
+        <member name="M:CSBTE.Player.InternalParse(System.String,System.Boolean)">
+            <summary>
+            Converts the string representing the player to its <see cref="T:CSBTE.Player"/> equivalent.
+            </summary>
+            <param name="value">A string representing a player to convert.</param>
+            <param name="tryParse"><see langword="true"/> to suppress exceptions, <see langword="false"/> otherwise.</param>
+            <returns>
+            A player represented by the given string.
+            <see cref="F:CSBTE.Player.Empty"/> if <paramref name="value"/> is not a valid <see cref="T:CSBTE.Player"/> and <paramref name="tryParse"/> is <see langword="true"/>.
+            </returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.Player"/>.</exception>
+        </member>
+        <member name="P:CSBTE.Player.Nick">
+            <summary>
+            Gets the player's nick.
+            </summary>
+        </member>
+        <member name="P:CSBTE.Player.UID">
+            <summary>
+            Gets the player's unique ID. -1 if empty.
+            </summary>
+        </member>
+        <member name="P:CSBTE.Player.AuthID">
+            <summary>
+            Gets the player's AuthID.
+            </summary>
+        </member>
+        <member name="P:CSBTE.Player.Team">
+            <summary>
+            Gets the player's team.
+            </summary>
+        </member>
+        <member name="T:CSBTE.StatusInfo">
+            <summary>
+            Represents a game server's status info as responded from the server by a "status" Rcon query.
+            </summary>
+        </member>
+        <member name="F:CSBTE.StatusInfo.GoldSrcStatusPattern">
+            <summary>
+            The <see cref="T:System.Text.RegularExpressions.Regex"/> pattern to match the GoldSrc engine status to.
+            </summary>
+        </member>
+        <member name="F:CSBTE.StatusInfo.SourceStatusPattern">
+            <summary>
+            The <see cref="T:System.Text.RegularExpressions.Regex"/> pattern to match the Source engine status to.
+            </summary>
+        </member>
+        <member name="M:CSBTE.StatusInfo.#ctor">
+            <summary>
+            Private default constructor to be used by the Parse commands.
+            </summary>
+        </member>
+        <member name="M:CSBTE.StatusInfo.#ctor(System.String,System.String,System.Net.IPEndPoint,System.String,System.Int32,System.Int32,System.Collections.Generic.List{CSBTE.UserInfo},System.Int32)">
+            <summary>
+            Constructs the StatusInfo instance.
+            </summary>
+            <param name="Hostname">The game server's hostname.</param>
+            <param name="Version">The game server's version.</param>
+            <param name="Address">The game server's address.</param>
+            <param name="Map">The current map.</param>
+            <param name="ActivePlayers">The number of active players reported by the game server.</param>
+            <param name="MaxPlayers">The game server's maximum available player slots.</param>
+            <param name="Users">The users reported by the game server.</param>
+            <param name="UserCount">The number of users reported by the game server.</param>
+        </member>
+        <member name="M:CSBTE.StatusInfo.TryParse(System.String,CSBTE.StatusInfo@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a status' info to
+            its <see cref="T:CSBTE.StatusInfo"/> equivalent. A return value indicates
+            whether the conversion succeeded.
+            </summary>
+            <param name="value">A string representing a status' info to convert.</param>
+            <param name="status">
+            When this method returns, contains the status' info value equivalent
+            to the string contained in <paramref name="value"/>, if the conversion succeeded, or <see langword="null"/> if the
+            conversion failed. This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.StatusInfo.Parse(System.String)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a status's info to
+            its <see cref="T:CSBTE.StatusInfo"/> equivalent.
+            </summary>
+            <param name="value">A string representing a status' info to convert.</param>
+            <returns>A status' info represented by the given <paramref name="value"/>.</returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.StatusInfo"/>.</exception>
+        </member>
+        <member name="M:CSBTE.StatusInfo.InternalParse(System.String,System.Boolean)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a status's info to
+            its <see cref="T:CSBTE.StatusInfo"/> equivalent.
+            </summary>
+            <param name="value">A string representing a status' info to convert.</param>
+            <param name="tryParse"><see langword="true"/> to suppress exceptions, <see langword="false"/> otherwise.</param>
+            <returns>
+            A status' info represented by the given <paramref name="value"/>.
+            <see langword="null"/> if <paramref name="value"/> is not a valid <see cref="T:CSBTE.StatusInfo"/> and <paramref name="tryParse"/> is <see langword="true"/>.
+            </returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.StatusInfo"/>.</exception>
+        </member>
+        <member name="M:CSBTE.StatusInfo.InternalParseSource(System.Text.RegularExpressions.Match)">
+            <summary>
+            Converts the given <paramref name="statusMatch"/> representing a Source engine status's info to
+            its <see cref="T:CSBTE.StatusInfo"/> equivalent.
+            </summary>
+            <param name="statusMatch">A <see cref="T:System.Text.RegularExpressions.Match"/> which matches a Source engine status.</param>
+            <returns>
+            A Source engine status' info represented by the given <paramref name="statusMatch"/>.
+            </returns>
+        </member>
+        <member name="M:CSBTE.StatusInfo.InternalParseGoldSrc(System.Text.RegularExpressions.Match)">
+            <summary>
+            Converts the given <paramref name="statusMatch"/> representing a GoldSrc engine status's info to
+            its <see cref="T:CSBTE.StatusInfo"/> equivalent.
+            </summary>
+            <param name="statusMatch">A <see cref="T:System.Text.RegularExpressions.Match"/> which matches a GoldSrc engine status.</param>
+            <returns>
+            A GoldSrc engine status' info represented by the given <paramref name="statusMatch"/>.
+            </returns>
+        </member>
+        <member name="P:CSBTE.StatusInfo.Hostname">
+            <summary>
+            Gets the game server's hostname.
+            </summary>
+        </member>
+        <member name="P:CSBTE.StatusInfo.Version">
+            <summary>
+            Gets the game server's version.
+            </summary>
+        </member>
+        <member name="P:CSBTE.StatusInfo.Address">
+            <summary>
+            Gets the game server's address.
+            </summary>
+        </member>
+        <member name="P:CSBTE.StatusInfo.Map">
+            <summary>
+            Gets the current map.
+            </summary>
+            <remarks>X, Y and Z coordinates are sent with the response, however they are not parsed.</remarks>
+        </member>
+        <member name="P:CSBTE.StatusInfo.ActivePlayers">
+            <summary>
+            Gets the number of active players reported by the game server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.StatusInfo.MaxPlayers">
+            <summary>
+            Gets the game server's maximum available player slots.
+            </summary>
+        </member>
+        <member name="P:CSBTE.StatusInfo.Users">
+            <summary>
+            Gets the users reported by the game server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.StatusInfo.UsersCount">
+            <summary>
+            Gets the number of users reported by the game server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.StatusInfo.Data">
+            <summary>
+            Gets the original given data which was parsed.
+            </summary>
+        </member>
+        <member name="T:CSBTE.LogListener">
+            <summary>
+            Used to listen to more than one server using the same endpoint\port.
+            </summary>
+        </member>
+        <member name="F:CSBTE.LogListener.servers">
+            <summary>
+            The collection to hold the listening servers.
+            </summary>
+        </member>
+        <member name="M:CSBTE.LogListener.OnException(CSBTE.ExceptionEventArgs)">
+            <summary>
+            Calls the <see cref="E:CSBTE.LogListener.Exception"/> event with the given <paramref name="args"/>.
+            </summary>
+            <param name="args">The event's arguments.</param>
+        </member>
+        <member name="M:CSBTE.LogListener.#ctor">
+            <summary>
+            Constructs the <see cref="T:CSBTE.LogListener"/> instance.
+            </summary>
+        </member>
+        <member name="M:CSBTE.LogListener.AddServer(CSBTE.ValveServer)">
+            <summary>
+            Adds the given server to the listening servers collection.
+            </summary>
+            <param name="server">The server to listen to.</param>
+        </member>
+        <member name="M:CSBTE.LogListener.RemoveServer(System.Net.IPEndPoint)">
+            <summary>
+            Removes the given server's address and port from the listening servers collection.
+            </summary>
+            <param name="server">The server to remove.</param>
+        </member>
+        <member name="M:CSBTE.LogListener.RemoveServer(CSBTE.ValveServer)">
+            <summary>
+            Removes the given server from the listening servers collection.
+            </summary>
+            <param name="server">The server to remove.</param>
+        </member>
+        <member name="M:CSBTE.LogListener.Listen(System.Int32)">
+            <summary>
+            Starts listening to log data from the servers.
+            </summary>
+            <remarks>
+            Responses are sent to the <see cref="M:CSBTE.ValveServer.OnDataReceived(CSBTE.DataReceivedEventArgs)"/> event or matched events
+            on the matching <see cref="T:CSBTE.ValveServer"/> instance.
+            </remarks>
+            <param name="port">The local port to listen to the Rcon log with.</param>
+            <exception cref="T:System.ArgumentOutOfRangeException">
+            The port parameter is greater than <see cref="F:System.Net.IPEndPoint.MaxPort"/> or less
+            than <see cref="F:System.Net.IPEndPoint.MinPort"/>.
+            </exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.AlreadyListeningException">
+            The <see cref="T:CSBTE.LogListener"/> instance is already listening.
+            </exception>
+        </member>
+        <member name="M:CSBTE.LogListener.Listen(System.Net.IPEndPoint)">
+            <summary>
+            Starts listening to log data from the servers.
+            </summary>
+            <remarks>
+            Responses are sent to the <see cref="M:CSBTE.ValveServer.OnDataReceived(CSBTE.DataReceivedEventArgs)"/> event or matched events
+            on the matching <see cref="T:CSBTE.ValveServer"/> instance.
+            </remarks>
+            <param name="localEP">The local end-point to listen to the Rcon log with.</param>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+            <exception cref="T:CSBTE.AlreadyListeningException">
+            The <see cref="T:CSBTE.LogListener"/> instance is already listening.
+            </exception>
+        </member>
+        <member name="M:CSBTE.LogListener.Stop">
+            <summary>
+            Stops listening to data received from he server.
+            </summary>
+            <remarks>
+            This method only stops listening to the log, it does NOT remove the server from any registered logging servers.
+            </remarks>
+            <exception cref="T:System.Security.SecurityException">The caller does not have the required permission.</exception>
+            <exception cref="T:System.IO.IOException">An I/O error occurred.</exception>
+        </member>
+        <member name="M:CSBTE.LogListener.WaitForData(System.IAsyncResult)">
+            <summary>
+            Waits for data from the servers.
+            </summary>
+        </member>
+        <member name="E:CSBTE.LogListener.Exception">
+            <summary>
+            An event to handle exceptions being throwen inside the listening thread.
+            </summary>
+        </member>
+        <member name="P:CSBTE.LogListener.Client">
+            <summary>
+            Gets the <see cref="T:System.Net.Sockets.UdpClient"/> used to listen to logs from the game server.
+            </summary>
+            <value>The log listener for the server.</value>
+        </member>
+        <member name="P:CSBTE.LogListener.ClientLocker">
+            <summary>
+            Gets the lock which makes sure the log listening will be safe.
+            </summary>
+        </member>
+        <member name="P:CSBTE.LogListener.IsListening">
+            <summary>
+            Gets whether this instance is listening for incoming data or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.LogListener.Port">
+            <summary>
+            Gets the port this instance is listening on. 0 if not listening.
+            </summary>
+        </member>
+        <member name="P:CSBTE.LogListener.Servers">
+            <summary>
+            Gets the servers which logs will be processed.
+            </summary>
+        </member>
+        <member name="T:CSBTE.Util">
+            <summary>
+            Utility class containing useful methods.
+            </summary>
+        </member>
+        <member name="M:CSBTE.Util.ConvertToByteArray(System.String)">
+            <summary>
+            Converts a given string to a representing byte array.
+            </summary>
+            <param name="value">The string to convert to byte array.</param>
+            <returns>A byte array representing the given string.</returns>
+        </member>
+        <member name="M:CSBTE.Util.ConvertToString(System.Byte[])">
+            <summary>
+            Converts a given byte array to a representing string.
+            </summary>
+            <param name="value">The byte array to convert to string.</param>
+            <returns>A string representing the given byte array.</returns>
+        </member>
+        <member name="M:CSBTE.Util.ConcatByteArrays(System.Byte[][])">
+            <summary>
+            Concat given byte arrays to one byte array.
+            </summary>
+            <param name="arrbtValues">Byte arrays to concat one after another.</param>
+            <returns>The concatinated byte array.</returns>
+        </member>
+        <member name="M:CSBTE.Util.ReadString(System.Byte[],System.Int32@)">
+            <summary>
+            Reads the string from the given value starting from the given offset.
+            </summary>
+            <param name="value">The value to read the string from.</param>
+            <param name="offset">The starting offset to read the string from.</param>
+            <returns>The string read from the value.</returns>
+        </member>
+        <member name="T:CSBTE.PlayerInfo">
+            <summary>
+            Represents a player's info as responded from the server by an A2S_PLAYER query.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries#A2S_PLAYER" />
+        </member>
+        <member name="M:CSBTE.PlayerInfo.#ctor">
+            <summary>
+            Private default constructor to be used by the Parse commands.
+            </summary>
+        </member>
+        <member name="M:CSBTE.PlayerInfo.#ctor(System.Int32,System.String,System.Int32,System.TimeSpan)">
+            <summary>
+            Constructs the PlayerInfo instance.
+            </summary>
+            <param name="Index">The player's index.</param>
+            <param name="Name">The player's name.</param>
+            <param name="Kills">The player's kill count.</param>
+            <param name="Time">The time the player has been connected to the server.</param>
+        </member>
+        <member name="M:CSBTE.PlayerInfo.TryParse(System.Byte[],System.Int32@,CSBTE.PlayerInfo@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a player's info to
+            its <see cref="T:CSBTE.PlayerInfo"/> equivalent. A return value indicates
+            whether the conversion succeeded.
+            </summary>
+            <param name="value">A byte array representing a player's info to convert.</param>
+            <param name="offset">The index from which to start reading the player's info from.</param>
+            <param name="player">
+            When this method returns, contains the player's info value equivalent
+            to the byte array contained in <paramref name="value"/>, if the conversion succeeded, or <see langword="null"/> if the
+            conversion failed. This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.PlayerInfo.Parse(System.Byte[],System.Int32@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a player's info to
+            its <see cref="T:CSBTE.PlayerInfo"/> equivalent.
+            </summary>
+            <param name="value">A byte array representing a player's info to convert.</param>
+            <param name="offset">The index from which to start reading the player's info from.</param>
+            <returns>A player's info represented by the given byte array.</returns>
+        </member>
+        <member name="P:CSBTE.PlayerInfo.Index">
+            <summary>
+            Gets the player's index.
+            </summary>
+            <remarks>The index into [0.. Num Players] for this entry.</remarks>
+        </member>
+        <member name="P:CSBTE.PlayerInfo.Name">
+            <summary>
+            Gets the player's name.
+            </summary>
+        </member>
+        <member name="P:CSBTE.PlayerInfo.Kills">
+            <summary>
+            Gets the player's kill count.
+            </summary>
+        </member>
+        <member name="P:CSBTE.PlayerInfo.Time">
+            <summary>
+            Gets the time the player has been connected to the server.
+            </summary>
+        </member>
+        <member name="P:CSBTE.PlayerInfo.Data">
+            <summary>
+            Gets the original given data which was parsed.
+            </summary>
+        </member>
+        <member name="T:CSBTE.HLEvent">
+            <summary>
+            Represents an HL log event according to the log standrads.
+            </summary>
+            <remarks>
+            Note that some events have more than one representation,
+            or that one representation has more than one event.
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard"/>
+        </member>
+        <member name="F:CSBTE.HLEvent.Cvar">
+            <summary>
+            Event 001. Occurs when server starts Cvars (001a), changes a Cvar (001b) or ends Cvars (001c).
+            </summary>
+            <remarks>
+            <para>In TFC, if tfc_clanbattle is 1, event 001a doesn't happen.</para>
+            <para>Event 001b occurs both at the beginning of a round and whenever someone changes a cvar over rcon.</para>
+            <para>In TFC, if tfc_clanbattle is 0, event 001c doesn't happen. You can instead use event 005, since it comes right after.</para>
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#001._Cvars" />
+        </member>
+        <member name="F:CSBTE.HLEvent.LogFileInfo">
+            <summary>
+            Event 002. Occurs when log file has started (002a) or closed (002b).
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#002._Log_Files" />
+        </member>
+        <member name="F:CSBTE.HLEvent.ChangeMap">
+            <summary>
+            Event 003. Occurs when map is loaded (003a) or started (003b).
+            </summary>
+            <remarks>
+            <para>Event 003a replaces the current "Spawning server" message.</para>
+            <para>Event 003b replaces the current "Map CRC" message. The message should appear AFTER all PackFile messages, to indicate when the game actually commences.</para>
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#003._Change_Map" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Rcon">
+            <summary>
+            Event 004. Occurs when an Rcon command is executed successfully (004a) or bad (004b).
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#004._Rcon" />
+        </member>
+        <member name="F:CSBTE.HLEvent.ServerName">
+            <summary>
+            Event 005. Occurs when the server displays its name.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#005._Server_Name" />
+        </member>
+        <member name="F:CSBTE.HLEvent.ServerSay">
+            <summary>
+            Event 006. Occurs when the server says a message.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#006._Server_Say" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Connection">
+            <summary>
+            Event 050. Occurs when a player connects to the server.
+            </summary>
+            <remarks>
+            This event number is identical to the Validation event (050b),
+            make sure not to get mixed up with it.
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#050._Connection" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Validation">
+            <summary>
+            Event 050b. Occurs when a player is validated.
+            </summary>
+            <remarks>
+            This event number is identical to the Connection event (050),
+            make sure not to get mixed up with it.
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#050b._Validation" />
+        </member>
+        <member name="F:CSBTE.HLEvent.EnterGame">
+            <summary>
+            Event 051. Occurs when a player enters the game.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#051._Enter_Game" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Disconnection">
+            <summary>
+            Event 052. Occurs when a player disconnects.
+            </summary>
+            <remarks>
+            This event number is identical to the Kick event (052b),
+            make sure not to get mixed up with it.
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#052._Disconnection" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Kick">
+            <summary>
+            Event 052b. Occurs when a player is kicked from the server.
+            </summary>
+            <remarks>
+            This event number is identical to the Disconnection event (052),
+            make sure not to get mixed up with it.
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#052b._Kick" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Suicide">
+            <summary>
+            Event 053. Occurs when a player commits suicide.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#053._Suicides" />
+        </member>
+        <member name="F:CSBTE.HLEvent.TeamSelection">
+            <summary>
+            Event 054. Occurs when a player selects a team.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#054._Team_Selection" />
+        </member>
+        <member name="F:CSBTE.HLEvent.RoleSelection">
+            <summary>
+            Event 055. Occurs when a player selects a role.
+            <para>This event covers classes in games like TFC, FLF and DOD.</para>
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#055._Role_Selection" />
+        </member>
+        <member name="F:CSBTE.HLEvent.ChangeName">
+            <summary>
+            Event 056. Occurs when a player changes his name.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#056._Change_Name" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Kill">
+            <summary>
+            Event 057. Occurs when a player kills another player.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#057._Kills" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Attack">
+            <summary>
+            Event 058. Occurs when a player attacks another player.
+            <para>This event allows for recording of partial kills and teammate friendly-fire injuries.
+            If the injury results in a kill, a Kill message (057) should be logged instead/also.</para>
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#058._Injuring" />
+        </member>
+        <member name="F:CSBTE.HLEvent.PlayerOnPlayer">
+            <summary>
+            Event 059. Occurs when a player triggers an action on another player.
+            <para>This event allows for logging of a wide range of events where one player performs an action on another player.
+            For example, in TFC this event may cover medic healings and infections, sentry gun destruction, spy uncovering, etc.</para>
+            <para>More detail about the action can be given by appending more properties to the end of the event.</para>
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#059._Player-Player_Actions" />
+        </member>
+        <member name="F:CSBTE.HLEvent.PlayerAction">
+            <summary>
+            Event 060. Occurs when a player commits an action.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#060._Player_Objectives.2FActions" />
+        </member>
+        <member name="F:CSBTE.HLEvent.TeamAction">
+            <summary>
+            Event 061. Occurs when a team commits an action.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#061._Team_Objectives.2FActions" />
+        </member>
+        <member name="F:CSBTE.HLEvent.WorldAction">
+            <summary>
+            Event 062. Occurs when the wolrd commits an action.
+            <para>This event allows logging of anything which does not happen in response to the actions of a player or team.
+            For example a gate opening at the start of a round.</para>
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#062._World_Objectives.2FActions" />
+        </member>
+        <member name="F:CSBTE.HLEvent.Chat">
+            <summary>
+            Event 063. Occurs when a player sends a message, either to the server (063a) or to his team (063b).
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#063._Chat" />
+        </member>
+        <member name="F:CSBTE.HLEvent.TeamAlliance">
+            <summary>
+            Event 064. Occurs when a team forms an alliance.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#064._Team_Alliances" />
+        </member>
+        <member name="F:CSBTE.HLEvent.TeamScore">
+            <summary>
+            Event 065. Occurs when a team's score is displayed.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#065._Round-End_Team_Score_Report" />
+        </member>
+        <member name="F:CSBTE.HLEvent.PrivateChat">
+            <summary>
+            Event 066. Occurs when a player private messages another player.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#066._Private_Chat" />
+        </member>
+        <member name="F:CSBTE.HLEvent.PlayerScore">
+            <summary>
+            Event 067. Occurs when a player's score is displayed.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#067._Round-End_Player_Score_Report" />
+        </member>
+        <member name="F:CSBTE.HLEvent.WeaponSelection">
+            <summary>
+            Event 068. Occurs when a player selects a weapon.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#068._Weapon_Selection" />
+        </member>
+        <member name="F:CSBTE.HLEvent.WeaponPickup">
+            <summary>
+            Event 069. Occurs when a player picks up a weapon.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard#069._Weapon_Pickup" />
+        </member>
+        <member name="T:CSBTE.ExceptionEventArgs">
+            <summary>
+            Provides data for the <see cref="E:CSBTE.ValveServer.Exception"/> event.
+            </summary>
+        </member>
+        <member name="M:CSBTE.ExceptionEventArgs.#ctor(System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.ExceptionEventArgs"/> class using
+            the specified <see cref="T:System.Exception"/>.
+            </summary>
+            <param name="Exp">The thrown <see cref="T:System.Exception"/>.</param>
+        </member>
+        <member name="P:CSBTE.ExceptionEventArgs.Exp">
+            <summary>
+            Gets the thrown exception.
+            </summary>
+        </member>
+        <member name="T:CSBTE.HltvInfo">
+            <summary>
+            Represents a hltv's info as responded from the server by a "status" Rcon query.
+            </summary>
+        </member>
+        <member name="F:CSBTE.HltvInfo.HltvPattern">
+            <summary>
+            The <see cref="T:System.Text.RegularExpressions.Regex"/> pattern to match the HLTV to.
+            </summary>
+        </member>
+        <member name="M:CSBTE.HltvInfo.#ctor">
+            <summary>
+            Private default constructor to be used by the Parse commands.
+            </summary>
+        </member>
+        <member name="M:CSBTE.HltvInfo.#ctor(System.String,System.Int32,System.String,System.Int32,System.Int32,System.Int32,System.TimeSpan,System.Net.IPEndPoint)">
+            <summary>
+            Constructs the HltvInfo instance.
+            </summary>
+            <param name="Name">The HLTV's name.</param>
+            <param name="UserID">The HLTV's ID.</param>
+            <param name="UniqueID">The HLTV's unique ID (should be "HLTV").</param>
+            <param name="Spectators">The amount of spectators in the HLTV.</param>
+            <param name="Slots">The amount of slots used in the HLTV.</param>
+            <param name="Delay">The amount of the HLTV delay in seconds.</param>
+            <param name="Time">The HLTV's time in the game server.</param>
+            <param name="Address">The HLTV's address.</param>
+        </member>
+        <member name="M:CSBTE.HltvInfo.TryParse(System.String,CSBTE.HltvInfo@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a HLTV's info to
+            its <see cref="T:CSBTE.HltvInfo"/> equivalent. A return value indicates
+            whether the conversion succeeded.
+            </summary>
+            <param name="value">A string representing a HLTV's info to convert.</param>
+            <param name="user">
+            When this method returns, contains the HLTV's info value equivalent
+            to the string contained in <paramref name="value"/>, if the conversion succeeded, or <see langword="null"/> if the
+            conversion failed. This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.HltvInfo.Parse(System.String)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a HLTV's info to
+            its <see cref="T:CSBTE.HltvInfo"/> equivalent.
+            </summary>
+            <param name="value">A string representing a HLTV's info to convert.</param>
+            <returns>A HLTV's info represented by the given <paramref name="value"/>.</returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.HltvInfo"/>.</exception>
+        </member>
+        <member name="M:CSBTE.HltvInfo.InternalParse(System.String,System.Boolean)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a HLTV's info to
+            its <see cref="T:CSBTE.HltvInfo"/> equivalent.
+            </summary>
+            <param name="value">A string representing a HLTV's info to convert.</param>
+            <param name="tryParse"><see langword="true"/> to suppress exceptions, <see langword="false"/> otherwise.</param>
+            <returns>
+            A HLTV's info represented by the given <paramref name="value"/>.
+            <see langword="null"/> if <paramref name="value"/> is not a valid <see cref="T:CSBTE.HltvInfo"/> and <paramref name="tryParse"/> is <see langword="true"/>.
+            </returns>
+            <exception cref="T:System.FormatException"><paramref name="value"/> is not a valid <see cref="T:CSBTE.HltvInfo"/>.</exception>
+        </member>
+        <member name="P:CSBTE.HltvInfo.Spectators">
+            <summary>
+            Gets the amount of spectators in the HLTV.
+            </summary>
+        </member>
+        <member name="P:CSBTE.HltvInfo.Slots">
+            <summary>
+            Gets the amount of slots used in the HLTV.
+            </summary>
+        </member>
+        <member name="P:CSBTE.HltvInfo.Delay">
+            <summary>
+            Gets the amount of the HLTV delay in seconds.
+            </summary>
+        </member>
+        <member name="T:CSBTE.TeamEventArgs">
+            <summary>
+            Provides data for events 061 and 064.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.TeamEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.TeamEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Team">The team who triggered the action.</param>
+            <param name="Noun">The noun in the action (action/team).</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.TeamEventArgs.Team">
+            <summary>
+            Gets the team who triggered the action.
+            </summary>
+        </member>
+        <member name="P:CSBTE.TeamEventArgs.Noun">
+            <summary>
+            Gets the noun in the action (action/team).
+            </summary>
+        </member>
+        <member name="T:CSBTE.DataReceivedEventArgs">
+            <summary>
+            Provides data for the <see cref="E:CSBTE.ValveServer.DataReceived"/> event.
+            </summary>
+        </member>
+        <member name="M:CSBTE.DataReceivedEventArgs.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.DataReceivedEventArgs"/> class using
+            the specified <see cref="T:System.String"/>.
+            </summary>
+            <param name="Data">The received data.</param>
+        </member>
+        <member name="P:CSBTE.DataReceivedEventArgs.Data">
+            <summary>
+            Gets the received data.
+            </summary>
+        </member>
+        <member name="T:CSBTE.PlayerActionEventArgs">
+            <summary>
+            Provides data for events 050, 053, 054, 055, 056, 060, 063 (a+b), 068 and 069.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.PlayerActionEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,CSBTE.Player,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.PlayerActionEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Triggerer">The player who triggered the action.</param>
+            <param name="Noun">The noun in the action (ip:port/weapon/team/role/name/action/message).</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.PlayerActionEventArgs.Triggerer">
+            <summary>
+            Gets the <see cref="T:CSBTE.Player"/> representing the player who triggered the action.
+            </summary>
+        </member>
+        <member name="P:CSBTE.PlayerActionEventArgs.Noun">
+            <summary>
+            Gets the noun in the action (ip:port/weapon/team/role/name/action/message).
+            </summary>
+        </member>
+        <member name="T:CSBTE.CvarEventArgs">
+            <summary>
+            Provides data for event 001b.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.CvarEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,System.String,System.String,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.CvarEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Cvar">The Cvar which is being changed.</param>
+            <param name="Value">The new value of the cvar.</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.CvarEventArgs.Cvar">
+            <summary>
+            Gets the Cvar which is being changed.
+            </summary>
+        </member>
+        <member name="P:CSBTE.CvarEventArgs.Value">
+            <summary>
+            Gets the new value of the cvar.
+            </summary>
+        </member>
+        <member name="T:CSBTE.ModInfo">
+            <summary>
+            Represents a mod's info as responded from the server by an A2S_INFO query.
+            </summary>
+            <remarks>
+            ModInfo only exists in an old GoldSrc response where Type == 'm' (0x6D)
+            and only if the IsMod value is true.
+            </remarks>
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries#ModInfo" />
+            <seealso href="http://developer.valvesoftware.com/wiki/Server_queries#A2S_INFO" />
+        </member>
+        <member name="M:CSBTE.ModInfo.#ctor">
+            <summary>
+            Private default constructor to be used by the Parse commands.
+            </summary>
+        </member>
+        <member name="M:CSBTE.ModInfo.TryParse(System.Byte[],System.Int32@,CSBTE.ModInfo@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a mod's info to
+            its <see cref="T:CSBTE.ModInfo"/> equivalent. A return value indicates
+            whether the conversion succeeded.
+            </summary>
+            <param name="value">A byte array representing a mod's info to convert.</param>
+            <param name="offset">The index from which to start reading the mod's info from.</param>
+            <param name="info">
+            When this method returns, contains the mod's info value equivalent to the byte array
+            contained in <paramref name="value"/>, if the conversion succeeded, or <see langword="null"/> if the
+            conversion failed. This parameter is passed uninitialized.
+            </param>
+            <returns><see langword="true"/> if <paramref name="value"/> was converted successfully; otherwise, <see langword="false"/>.</returns>
+        </member>
+        <member name="M:CSBTE.ModInfo.Parse(System.Byte[],System.Int32@)">
+            <summary>
+            Converts the given <paramref name="value"/> representing a mod's info to
+            its <see cref="T:CSBTE.ModInfo"/> equivalent.
+            </summary>
+            <param name="value">A byte array representing a mod's info to convert.</param>
+            <param name="offset">The index from which to start reading the mod's info from.</param>
+            <returns>A mod's info represented by the given byte array.</returns>
+        </member>
+        <member name="P:CSBTE.ModInfo.URLInfo">
+            <summary>
+            Gets the URL containing information about this mod.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ModInfo.URLDL">
+            <summary>
+            Gets the URL to download this mod from.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ModInfo.ModVersion">
+            <summary>
+            Gets the version of the installed mod.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ModInfo.ModSize">
+            <summary>
+            Gets the download size of this mod.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ModInfo.SvOnly">
+            <summary>
+            Gets whether this mod is server side only or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ModInfo.ClDLL">
+            <summary>
+            Gets whether this mod has custom client dll or not.
+            </summary>
+        </member>
+        <member name="P:CSBTE.ModInfo.Data">
+            <summary>
+            Gets the original given data which was parsed.
+            </summary>
+        </member>
+        <member name="T:CSBTE.PlayerEventArgs">
+            <summary>
+            Provides data for events 050b, 051 and 052.
+            </summary>
+            <seealso href="http://developer.valvesoftware.com/wiki/HL_Log_Standard" />
+        </member>
+        <member name="M:CSBTE.PlayerEventArgs.#ctor(System.String,CSBTE.HLEvent,System.String,CSBTE.Player,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.PlayerEventArgs"/> class using
+            the specified arguments.
+            </summary>
+            <param name="LogLine">A <see cref="T:System.String"/> containing the log line which was received.</param>
+            <param name="Event">A <see cref="T:CSBTE.HLEvent"/> representing the event.</param>
+            <param name="EventName">A <see cref="T:System.String"/> representing the event.</param>
+            <param name="Triggerer">The player who triggered the action.</param>
+            <param name="Properties">
+            A case-insensative <see cref="T:System.Collections.Generic.Dictionary`2"/> of the properties.
+            </param>
+        </member>
+        <member name="P:CSBTE.PlayerEventArgs.Triggerer">
+            <summary>
+            Gets the <see cref="T:CSBTE.Player"/> representing the player who triggered the action.
+            </summary>
+        </member>
+        <member name="T:CSBTE.Core.KeyValue">
+            <summary>
+            Represents a recursive string key to arbitrary value container.
+            </summary>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.#ctor(System.String,System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:CSBTE.Core.KeyValue"/> class.
+            </summary>
+            <param name="name">The optional name of the root key.</param>
+            <param name="value">The optional value assigned to the root key.</param>
+        </member>
+        <member name="F:CSBTE.Core.KeyValue.Invalid">
+            <summary>
+            Represents an invalid <see cref="T:CSBTE.Core.KeyValue"/> given when a searched for child does not exist.
+            </summary>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.AsString">
+            <summary>
+            Returns the value of this instance as a string.
+            </summary>
+            <returns>The value of this instance as a string.</returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.AsInteger(System.Int32)">
+            <summary>
+            Attempts to convert and return the value of this instance as an integer.
+            If the conversion is invalid, the default value is returned.
+            </summary>
+            <param name="defaultValue">The default value to return if the conversion is invalid.</param>
+            <returns>The value of this instance as an integer.</returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.AsLong(System.Int64)">
+            <summary>
+            Attempts to convert and return the value of this instance as a long.
+            If the conversion is invalid, the default value is returned.
+            </summary>
+            <param name="defaultValue">The default value to return if the conversion is invalid.</param>
+            <returns>The value of this instance as an long.</returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.AsFloat(System.Single)">
+            <summary>
+            Attempts to convert and return the value of this instance as a float.
+            If the conversion is invalid, the default value is returned.
+            </summary>
+            <param name="defaultValue">The default value to return if the conversion is invalid.</param>
+            <returns>The value of this instance as an float.</returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.AsBoolean(System.Boolean)">
+            <summary>
+            Attempts to convert and return the value of this instance as a boolean.
+            If the conversion is invalid, the default value is returned.
+            </summary>
+            <param name="defaultValue">The default value to return if the conversion is invalid.</param>
+            <returns>The value of this instance as an boolean.</returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.ToString">
+            <summary>
+            Returns a <see cref="T:System.String"/> that represents this instance.
+            </summary>
+            <returns>
+            A <see cref="T:System.String"/> that represents this instance.
+            </returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.LoadAsText(System.String)">
+            <summary>
+            Attempts to load the given filename as a text <see cref="T:CSBTE.Core.KeyValue"/>.
+            </summary>
+            <param name="path">The path to the file to load.</param>
+            <returns>a <see cref="T:CSBTE.Core.KeyValue"/> instance if the load was successful, or <c>null</c> on failure.</returns>
+            <remarks>
+            This method will swallow any exceptions that occur when reading, use <see cref="M:CSBTE.Core.KeyValue.ReadAsText(System.IO.Stream)"/> if you wish to handle exceptions.
+            </remarks>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.LoadAsBinary(System.String)">
+            <summary>
+            Attempts to load the given filename as a binary <see cref="T:CSBTE.Core.KeyValue"/>.
+            </summary>
+            <param name="path">The path to the file to load.</param>
+            <returns>a <see cref="T:CSBTE.Core.KeyValue"/> instance if the load was successful, or <c>null</c> on failure.</returns>
+            <remarks>
+            This method will swallow any exceptions that occur when reading, use <see cref="M:CSBTE.Core.KeyValue.ReadAsBinary(System.IO.Stream)"/> if you wish to handle exceptions.
+            </remarks>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.LoadFromString(System.String)">
+            <summary>
+            Attempts to create an instance of <see cref="T:CSBTE.Core.KeyValue"/> from the given input text.
+            </summary>
+            <param name="input">The input text to load.</param>
+            <returns>a <see cref="T:CSBTE.Core.KeyValue"/> instance if the load was successful, or <c>null</c> on failure.</returns>
+            <remarks>
+            This method will swallow any exceptions that occur when reading, use <see cref="M:CSBTE.Core.KeyValue.ReadAsText(System.IO.Stream)"/> if you wish to handle exceptions.
+            </remarks>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.ReadAsText(System.IO.Stream)">
+            <summary>
+            Populate this instance from the given <see cref="T:System.IO.Stream"/> as a text <see cref="T:CSBTE.Core.KeyValue"/>.
+            </summary>
+            <param name="input">The input <see cref="T:System.IO.Stream"/> to read from.</param>
+            <returns><c>true</c> if the read was successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.ReadFileAsText(System.String)">
+            <summary>
+            Opens and reads the given filename as text.
+            </summary>
+            <seealso cref="M:CSBTE.Core.KeyValue.ReadAsText(System.IO.Stream)"/>
+            <param name="filename">The file to open and read.</param>
+            <returns><c>true</c> if the read was successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.SaveToFile(System.String)">
+            <summary>
+            Saves this instance to file.
+            </summary>
+            <param name="path">The file path to save to.</param>
+            <param name="asBinary">If set to <c>true</c>, saves this instance as binary.</param>
+        </member>
+        <member name="M:CSBTE.Core.KeyValue.ReadAsBinary(System.IO.Stream)">
+            <summary>
+            Populate this instance from the given <see cref="T:System.IO.Stream"/> as a binary <see cref="T:CSBTE.Core.KeyValue"/>.
+            </summary>
+            <param name="input">The input <see cref="T:System.IO.Stream"/> to read from.</param>
+            <returns><c>true</c> if the read was successful; otherwise, <c>false</c>.</returns>
+        </member>
+        <member name="P:CSBTE.Core.KeyValue.Name">
+            <summary>
+            Gets or sets the name of this instance.
+            </summary>
+        </member>
+        <member name="P:CSBTE.Core.KeyValue.Value">
+            <summary>
+            Gets or sets the value of this instance.
+            </summary>
+        </member>
+        <member name="P:CSBTE.Core.KeyValue.Children">
+            <summary>
+            Gets the children of this instance.
+            </summary>
+        </member>
+        <member name="P:CSBTE.Core.KeyValue.Item(System.String)">
+            <summary>
+            Gets the child <see cref="!:SteamKit2.KeyValue"/> with the specified key.
+            If no child with this key exists, <see cref="F:CSBTE.Core.KeyValue.Invalid"/> is returned.
+            </summary>
+        </member>
+    </members>
+</doc>

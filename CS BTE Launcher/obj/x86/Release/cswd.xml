@@ -1,0 +1,625 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+cswd
+</name>
+</assembly>
+<members>
+<member name="M:CS_BTE_Launcher.frmMsgbox.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member><member name="M:CS_BTE_Launcher.frmMode.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources._0">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources._1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources._2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources._2_anniversary_of_the_painting">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources._3">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources._4">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.All_about_lovin__you_paint">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Army_rank_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Bandspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.basic_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.basic_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Battalion_rank_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.bg_pic">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Brigade_rank_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_bulletin_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_bulletin_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_bulletin_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_cancel_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_cancel_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_cancel_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_channel_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_channel_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_channel_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_exit_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_exit_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_exit_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_myinfo_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_myinfo_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_myinfo_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_option_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_option_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_option_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_quest_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_quest_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_quest_new_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_quest_new_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_quest_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_server_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_server_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_server_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_store_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_store_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_store_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_weaponmaking_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_weaponmaking_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.btn_weaponmaking_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.cannotuse">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Choijiyoon_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.coinbox2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Corps_rank_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Crissspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.csbte_bg">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.csbte_bg_2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Cso">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.cswd">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Ctspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.dm_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.dm_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.dr_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.dr_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.EricaSpray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.fun_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.fun_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.gdm_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.gdm_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Gongmospray01">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Gongmospray02">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Gongmospray03">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Gongmospray07">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Gongmospray08">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Gongmospray09">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Gongmospray10">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.hd_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.hd_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Host_regular_zombie_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Jenniferspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Ladderspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Love_the_debris_painting__left_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Love_the_debris_painting__right_">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.luckyitem_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.luckyitem_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.luckyitem_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.MeiSpray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.myinfo_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.myinfo_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.myinfo_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Natashaspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Newyearspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.nndm_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.nndm_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.No_photo">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.none_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.none_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.noticetitle">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.npc_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.npc_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Pczombi_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Platoon_rank_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.random_cso">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.randombox_c">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.randombox_d">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.randombox_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.randombox_o">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Ritsuka_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Skull_rabbit_painting">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Skullspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Sl8gold_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Sniper_king_painting">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.taskbar">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.td_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.td_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.textbox">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Trspray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.tt1">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.tt2">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Valentines_section_painting">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Watergun_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Wc13spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Wcg12spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Xmas_spray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Xmasspray09">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.Yurispray">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.zb1_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.zb1_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.zb3_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.zb3_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.zb4_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.zb4_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.ze_n">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="P:CS_BTE_Launcher.My.Resources.Resources.ze_s">
+	<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member><member name="T:CS_BTE_Launcher.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="M:CS_BTE_Launcher.frmNews.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member><member name="M:CS_BTE_Launcher.frmLauncher.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member><member name="M:CS_BTE_Launcher.frmJoin.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member><member name="M:CS_BTE_Launcher.frmBarracks.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member><member name="F:CS_BTE_Launcher.Dwm.WTNCA_NODRAWCAPTION">
+	<summary>
+ Do Not Draw The Caption (Text)
+ </summary>
+</member><member name="F:CS_BTE_Launcher.Dwm.WTNCA_NODRAWICON">
+	<summary>
+ Do Not Draw the Icon
+ </summary>
+</member><member name="F:CS_BTE_Launcher.Dwm.WTNCA_NOSYSMENU">
+	<summary>
+ Do Not Show the System Menu
+ </summary>
+</member><member name="F:CS_BTE_Launcher.Dwm.WTNCA_NOMIRRORHELP">
+	<summary>
+ Do Not Mirror the Question mark Symbol
+ </summary>
+</member><member name="T:CS_BTE_Launcher.Dwm.WTA_OPTIONS">
+	<summary>
+ The Options of What Attributes to Add/Remove
+ </summary>
+</member><member name="T:CS_BTE_Launcher.Dwm.WindowThemeAttributeType">
+	<summary>
+ What Type of Attributes? (Only One is Currently Defined)
+ </summary>
+</member><member name="M:CS_BTE_Launcher.Dwm.SetWindowThemeAttribute(System.IntPtr,CS_BTE_Launcher.Dwm.WindowThemeAttributeType,CS_BTE_Launcher.Dwm.WTA_OPTIONS@,System.UInt32)">
+	<summary>
+ Set The Window's Theme Attributes
+ </summary>
+	<param name="hWnd">The Handle to the Window</param>
+	<param name="wtype">What Type of Attributes</param>
+	<param name="attributes">The Attributes to Add/Remove</param>
+	<param name="size">The Size of the Attributes Struct</param>
+	<returns>If The Call Was Successful or Not</returns>
+</member><member name="M:CS_BTE_Launcher.frmOption.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member><member name="M:CS_BTE_Launcher.frmCreate.HiWord(System.Int32)">
+	<summary>
+ Equivalent to the HiWord C Macro
+ </summary>
+	<param name="dwValue"></param>
+	<returns></returns>
+</member>
+</members>
+</doc>
